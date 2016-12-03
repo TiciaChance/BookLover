@@ -10,9 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var goodreads = GoodreadsAPI()
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        goodreads.APICall()
     }
 
     override func didReceiveMemoryWarning() {

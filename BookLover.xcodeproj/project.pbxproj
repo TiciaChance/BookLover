@@ -14,6 +14,8 @@
 		1145DE581DF28BB8001EBB5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1145DE561DF28BB8001EBB5C /* LaunchScreen.storyboard */; };
 		1145DE631DF28BB8001EBB5C /* BookLoverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1145DE621DF28BB8001EBB5C /* BookLoverTests.swift */; };
 		1145DE6E1DF28BB8001EBB5C /* BookLoverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1145DE6D1DF28BB8001EBB5C /* BookLoverUITests.swift */; };
+		1145DE7C1DF28CD7001EBB5C /* GoodreadsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1145DE7B1DF28CD7001EBB5C /* GoodreadsAPI.swift */; };
+		B6D59790CA236B3B0CEFFE25 /* Pods_BookLover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7146FD7E6E1D37EB08684CBD /* Pods_BookLover.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,10 @@
 		1145DE691DF28BB8001EBB5C /* BookLoverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookLoverUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1145DE6D1DF28BB8001EBB5C /* BookLoverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookLoverUITests.swift; sourceTree = "<group>"; };
 		1145DE6F1DF28BB8001EBB5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1145DE7B1DF28CD7001EBB5C /* GoodreadsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoodreadsAPI.swift; path = ../GoodreadsAPI.swift; sourceTree = "<group>"; };
+		29B886B61605E527A34936A1 /* Pods-BookLover.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookLover.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookLover/Pods-BookLover.release.xcconfig"; sourceTree = "<group>"; };
+		7146FD7E6E1D37EB08684CBD /* Pods_BookLover.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookLover.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B13C07A86A1EE4CB9D5AC278 /* Pods-BookLover.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookLover.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BookLover/Pods-BookLover.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6D59790CA236B3B0CEFFE25 /* Pods_BookLover.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +88,8 @@
 				1145DE611DF28BB8001EBB5C /* BookLoverTests */,
 				1145DE6C1DF28BB8001EBB5C /* BookLoverUITests */,
 				1145DE4B1DF28BB8001EBB5C /* Products */,
+				4D11F72B84A22561BDB423D7 /* Pods */,
+				E0FB7D09FF43048F03524DD4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +108,7 @@
 			children = (
 				1145DE4D1DF28BB8001EBB5C /* AppDelegate.swift */,
 				1145DE4F1DF28BB8001EBB5C /* ViewController.swift */,
+				1145DE7B1DF28CD7001EBB5C /* GoodreadsAPI.swift */,
 				1145DE511DF28BB8001EBB5C /* Main.storyboard */,
 				1145DE541DF28BB8001EBB5C /* Assets.xcassets */,
 				1145DE561DF28BB8001EBB5C /* LaunchScreen.storyboard */,
@@ -125,6 +135,23 @@
 			path = BookLoverUITests;
 			sourceTree = "<group>";
 		};
+		4D11F72B84A22561BDB423D7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B13C07A86A1EE4CB9D5AC278 /* Pods-BookLover.debug.xcconfig */,
+				29B886B61605E527A34936A1 /* Pods-BookLover.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E0FB7D09FF43048F03524DD4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7146FD7E6E1D37EB08684CBD /* Pods_BookLover.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +159,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1145DE721DF28BB8001EBB5C /* Build configuration list for PBXNativeTarget "BookLover" */;
 			buildPhases = (
+				A0C54539F40F808E5C1B7F00 /* [CP] Check Pods Manifest.lock */,
 				1145DE461DF28BB7001EBB5C /* Sources */,
 				1145DE471DF28BB7001EBB5C /* Frameworks */,
 				1145DE481DF28BB7001EBB5C /* Resources */,
+				6475A938D2B0CCDC8CA8ADC0 /* [CP] Embed Pods Frameworks */,
+				A1D88C5E10854D390F382F9F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -193,6 +223,7 @@
 				TargetAttributes = {
 					1145DE491DF28BB7001EBB5C = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = TDFXWLD7DJ;
 						ProvisioningStyle = Automatic;
 					};
 					1145DE5D1DF28BB8001EBB5C = {
@@ -254,6 +285,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6475A938D2B0CCDC8CA8ADC0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BookLover/Pods-BookLover-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0C54539F40F808E5C1B7F00 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A1D88C5E10854D390F382F9F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BookLover/Pods-BookLover-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1145DE461DF28BB7001EBB5C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -261,6 +340,7 @@
 			files = (
 				1145DE501DF28BB8001EBB5C /* ViewController.swift in Sources */,
 				1145DE4E1DF28BB8001EBB5C /* AppDelegate.swift in Sources */,
+				1145DE7C1DF28CD7001EBB5C /* GoodreadsAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,8 +490,10 @@
 		};
 		1145DE731DF28BB8001EBB5C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B13C07A86A1EE4CB9D5AC278 /* Pods-BookLover.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TDFXWLD7DJ;
 				INFOPLIST_FILE = BookLover/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ElectricChance.BookLover;
@@ -422,8 +504,10 @@
 		};
 		1145DE741DF28BB8001EBB5C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29B886B61605E527A34936A1 /* Pods-BookLover.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TDFXWLD7DJ;
 				INFOPLIST_FILE = BookLover/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ElectricChance.BookLover;
@@ -505,6 +589,7 @@
 				1145DE741DF28BB8001EBB5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1145DE751DF28BB8001EBB5C /* Build configuration list for PBXNativeTarget "BookLoverTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +598,7 @@
 				1145DE771DF28BB8001EBB5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1145DE781DF28BB8001EBB5C /* Build configuration list for PBXNativeTarget "BookLoverUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +607,7 @@
 				1145DE7A1DF28BB8001EBB5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

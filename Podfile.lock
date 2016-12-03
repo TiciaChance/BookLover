@@ -1,0 +1,18 @@
+PODS:
+  - Alamofire (4.0.1)
+  - SwiftyJSON (3.1.1)
+  - SWXMLHash (3.0.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.0)
+  - SwiftyJSON
+  - SWXMLHash (~> 3.0.0)
+
+SPEC CHECKSUMS:
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
+  SWXMLHash: e0f6935971f01b06fb228cf435510d998ecde647
+
+PODFILE CHECKSUM: 3c12057bc0f3bdd7163794cc47319b80a0216c0a
+
+COCOAPODS: 1.1.1
