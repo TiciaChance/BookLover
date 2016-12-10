@@ -1,26 +1,138 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="e2Y-0p-gT8">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Book Lover PageVC-->
+        <scene sceneID="HsR-TZ-2NJ">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="e2Y-0p-gT8" customClass="BookLoverPageVC" customModule="BookLover" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t80-nt-pBJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18" y="147"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="8XN-uE-2MJ">
+            <objects>
+                <viewController storyboardIdentifier="firstVC" id="DSR-X4-YQj" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="ibp-lX-jkW"/>
+                        <viewControllerLayoutGuide type="bottom" id="FyS-VO-9zL"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="B7j-RE-CTt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slantedbooks.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="e2n-c7-omI">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tas-5w-rz3">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Tas-5w-rz3" firstAttribute="leading" secondItem="B7j-RE-CTt" secondAttribute="leading" id="7T1-ET-Mad"/>
+                            <constraint firstItem="FyS-VO-9zL" firstAttribute="top" secondItem="e2n-c7-omI" secondAttribute="bottom" id="9Bh-JU-HUs"/>
+                            <constraint firstItem="e2n-c7-omI" firstAttribute="leading" secondItem="B7j-RE-CTt" secondAttribute="leading" id="EBT-Ua-Zud"/>
+                            <constraint firstAttribute="trailing" secondItem="Tas-5w-rz3" secondAttribute="trailing" id="Fps-Hs-g09"/>
+                            <constraint firstItem="e2n-c7-omI" firstAttribute="top" secondItem="B7j-RE-CTt" secondAttribute="top" id="OvE-Yg-fSh"/>
+                            <constraint firstItem="Tas-5w-rz3" firstAttribute="top" secondItem="B7j-RE-CTt" secondAttribute="top" id="RyF-lR-x8b"/>
+                            <constraint firstAttribute="trailing" secondItem="e2n-c7-omI" secondAttribute="trailing" id="bhv-JW-8gf"/>
+                            <constraint firstItem="FyS-VO-9zL" firstAttribute="top" secondItem="Tas-5w-rz3" secondAttribute="bottom" id="ht3-V2-fil"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9I3-MN-gcJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="696.79999999999995" y="147.97601199400302"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="uWC-zk-0Wa">
+            <objects>
+                <viewController storyboardIdentifier="secondVC" id="Rxw-Kp-cgP" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rCC-RL-n2T"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xfu-x0-OHc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bDb-bO-NzD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crowdedbooks.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="vgI-3g-YUq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view alpha="0.20000000000000001" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6CV-3R-8yL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="vgI-3g-YUq" secondAttribute="trailing" id="6Ns-wN-12W"/>
+                            <constraint firstItem="vgI-3g-YUq" firstAttribute="leading" secondItem="bDb-bO-NzD" secondAttribute="leading" id="QIR-x4-bfw"/>
+                            <constraint firstItem="vgI-3g-YUq" firstAttribute="top" secondItem="bDb-bO-NzD" secondAttribute="top" id="Uwy-Ov-sNk"/>
+                            <constraint firstItem="Xfu-x0-OHc" firstAttribute="top" secondItem="vgI-3g-YUq" secondAttribute="bottom" id="zJ9-JW-kkD"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XE8-zk-vOR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1416.8" y="147.97601199400302"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Fnq-zR-b7J">
+            <objects>
+                <viewController storyboardIdentifier="thirdVC" id="HZP-Nl-aM4" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4mP-gO-FLw"/>
+                        <viewControllerLayoutGuide type="bottom" id="ct4-F2-LmO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="POb-4D-NPs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookshop.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="wK8-4C-x9H">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gDF-7H-AQo">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gDF-7H-AQo" firstAttribute="top" secondItem="POb-4D-NPs" secondAttribute="top" id="CAS-L5-94Z"/>
+                            <constraint firstItem="wK8-4C-x9H" firstAttribute="leading" secondItem="POb-4D-NPs" secondAttribute="leading" id="DbH-Ph-Q44"/>
+                            <constraint firstItem="wK8-4C-x9H" firstAttribute="leading" secondItem="POb-4D-NPs" secondAttribute="leading" id="HEd-2g-c8a"/>
+                            <constraint firstItem="gDF-7H-AQo" firstAttribute="leading" secondItem="POb-4D-NPs" secondAttribute="leading" id="Oci-FH-Iwf"/>
+                            <constraint firstItem="wK8-4C-x9H" firstAttribute="top" secondItem="POb-4D-NPs" secondAttribute="top" id="TeW-Jr-UeJ"/>
+                            <constraint firstItem="ct4-F2-LmO" firstAttribute="top" secondItem="gDF-7H-AQo" secondAttribute="bottom" id="XJr-Ts-dhG"/>
+                            <constraint firstAttribute="trailing" secondItem="gDF-7H-AQo" secondAttribute="trailing" id="Z6a-c6-kxJ"/>
+                            <constraint firstItem="ct4-F2-LmO" firstAttribute="top" secondItem="wK8-4C-x9H" secondAttribute="bottom" id="cnU-zH-QOs"/>
+                            <constraint firstAttribute="trailing" secondItem="wK8-4C-x9H" secondAttribute="trailing" id="ctJ-bE-Ji1"/>
+                            <constraint firstItem="wK8-4C-x9H" firstAttribute="top" secondItem="POb-4D-NPs" secondAttribute="top" id="emY-uY-kyE"/>
+                            <constraint firstItem="ct4-F2-LmO" firstAttribute="top" secondItem="wK8-4C-x9H" secondAttribute="bottom" id="mJK-Rz-qNT"/>
+                            <constraint firstAttribute="trailing" secondItem="wK8-4C-x9H" secondAttribute="trailing" id="oQc-S3-s1G"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kEU-mj-t0y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2116" y="147.97601199400302"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bookshop.jpg" width="4896" height="3264"/>
+        <image name="crowdedbooks.jpg" width="2400" height="1600"/>
+        <image name="slantedbooks.jpg" width="3226" height="2369"/>
+    </resources>
 </document>

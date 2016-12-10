@@ -15,6 +15,16 @@
 		1145DE631DF28BB8001EBB5C /* BookLoverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1145DE621DF28BB8001EBB5C /* BookLoverTests.swift */; };
 		1145DE6E1DF28BB8001EBB5C /* BookLoverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1145DE6D1DF28BB8001EBB5C /* BookLoverUITests.swift */; };
 		1145DE7C1DF28CD7001EBB5C /* GoodreadsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1145DE7B1DF28CD7001EBB5C /* GoodreadsAPI.swift */; };
+		119E4FCB1DFC68920025DD70 /* slantedbooks.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 119E4FC61DFC68920025DD70 /* slantedbooks.jpg */; };
+		119E4FCC1DFC68920025DD70 /* openbooks.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 119E4FC71DFC68920025DD70 /* openbooks.jpg */; };
+		119E4FCD1DFC68920025DD70 /* bookslinedup.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 119E4FC81DFC68920025DD70 /* bookslinedup.jpg */; };
+		119E4FCE1DFC68920025DD70 /* crowdedbooks.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 119E4FC91DFC68920025DD70 /* crowdedbooks.jpg */; };
+		119E4FCF1DFC68920025DD70 /* book.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 119E4FCA1DFC68920025DD70 /* book.jpg */; };
+		119E4FD51DFC6B0C0025DD70 /* BookLoverPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119E4FD41DFC6B0C0025DD70 /* BookLoverPageVC.swift */; };
+		119E4FD71DFC6BCD0025DD70 /* CodeScanner.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 119E4FD61DFC6BCD0025DD70 /* CodeScanner.storyboard */; };
+		119E4FDB1DFC70770025DD70 /* bookshop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 119E4FD81DFC70770025DD70 /* bookshop.jpg */; };
+		119E4FDC1DFC70770025DD70 /* oldschool.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 119E4FD91DFC70770025DD70 /* oldschool.jpg */; };
+		119E4FDD1DFC70770025DD70 /* books2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 119E4FDA1DFC70770025DD70 /* books2.jpg */; };
 		B6D59790CA236B3B0CEFFE25 /* Pods_BookLover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7146FD7E6E1D37EB08684CBD /* Pods_BookLover.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +60,16 @@
 		1145DE6D1DF28BB8001EBB5C /* BookLoverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookLoverUITests.swift; sourceTree = "<group>"; };
 		1145DE6F1DF28BB8001EBB5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1145DE7B1DF28CD7001EBB5C /* GoodreadsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoodreadsAPI.swift; path = ../GoodreadsAPI.swift; sourceTree = "<group>"; };
+		119E4FC61DFC68920025DD70 /* slantedbooks.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = slantedbooks.jpg; path = ../../../../Downloads/slantedbooks.jpg; sourceTree = "<group>"; };
+		119E4FC71DFC68920025DD70 /* openbooks.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = openbooks.jpg; path = ../../../../Downloads/openbooks.jpg; sourceTree = "<group>"; };
+		119E4FC81DFC68920025DD70 /* bookslinedup.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bookslinedup.jpg; path = ../../../../Downloads/bookslinedup.jpg; sourceTree = "<group>"; };
+		119E4FC91DFC68920025DD70 /* crowdedbooks.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = crowdedbooks.jpg; path = ../../../../Downloads/crowdedbooks.jpg; sourceTree = "<group>"; };
+		119E4FCA1DFC68920025DD70 /* book.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = book.jpg; path = ../../../../Downloads/book.jpg; sourceTree = "<group>"; };
+		119E4FD41DFC6B0C0025DD70 /* BookLoverPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookLoverPageVC.swift; sourceTree = "<group>"; };
+		119E4FD61DFC6BCD0025DD70 /* CodeScanner.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CodeScanner.storyboard; sourceTree = "<group>"; };
+		119E4FD81DFC70770025DD70 /* bookshop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bookshop.jpg; path = ../../../../Downloads/bookshop.jpg; sourceTree = "<group>"; };
+		119E4FD91DFC70770025DD70 /* oldschool.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = oldschool.jpg; path = ../../../../Downloads/oldschool.jpg; sourceTree = "<group>"; };
+		119E4FDA1DFC70770025DD70 /* books2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = books2.jpg; path = ../../../../Downloads/books2.jpg; sourceTree = "<group>"; };
 		29B886B61605E527A34936A1 /* Pods-BookLover.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookLover.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookLover/Pods-BookLover.release.xcconfig"; sourceTree = "<group>"; };
 		7146FD7E6E1D37EB08684CBD /* Pods_BookLover.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookLover.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B13C07A86A1EE4CB9D5AC278 /* Pods-BookLover.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookLover.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BookLover/Pods-BookLover.debug.xcconfig"; sourceTree = "<group>"; };
@@ -108,11 +128,12 @@
 			children = (
 				1145DE4D1DF28BB8001EBB5C /* AppDelegate.swift */,
 				1145DE4F1DF28BB8001EBB5C /* ViewController.swift */,
-				1145DE7B1DF28CD7001EBB5C /* GoodreadsAPI.swift */,
-				1145DE511DF28BB8001EBB5C /* Main.storyboard */,
+				119E4FD31DFC6ACE0025DD70 /* View */,
+				119E4FD21DFC6AA00025DD70 /* Model */,
 				1145DE541DF28BB8001EBB5C /* Assets.xcassets */,
 				1145DE561DF28BB8001EBB5C /* LaunchScreen.storyboard */,
 				1145DE591DF28BB8001EBB5C /* Info.plist */,
+				119E4FD01DFC6A8A0025DD70 /* Photos */,
 			);
 			path = BookLover;
 			sourceTree = "<group>";
@@ -133,6 +154,39 @@
 				1145DE6F1DF28BB8001EBB5C /* Info.plist */,
 			);
 			path = BookLoverUITests;
+			sourceTree = "<group>";
+		};
+		119E4FD01DFC6A8A0025DD70 /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				119E4FC61DFC68920025DD70 /* slantedbooks.jpg */,
+				119E4FC71DFC68920025DD70 /* openbooks.jpg */,
+				119E4FD81DFC70770025DD70 /* bookshop.jpg */,
+				119E4FD91DFC70770025DD70 /* oldschool.jpg */,
+				119E4FDA1DFC70770025DD70 /* books2.jpg */,
+				119E4FC81DFC68920025DD70 /* bookslinedup.jpg */,
+				119E4FC91DFC68920025DD70 /* crowdedbooks.jpg */,
+				119E4FCA1DFC68920025DD70 /* book.jpg */,
+			);
+			name = Photos;
+			sourceTree = "<group>";
+		};
+		119E4FD21DFC6AA00025DD70 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1145DE7B1DF28CD7001EBB5C /* GoodreadsAPI.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		119E4FD31DFC6ACE0025DD70 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				119E4FD41DFC6B0C0025DD70 /* BookLoverPageVC.swift */,
+				1145DE511DF28BB8001EBB5C /* Main.storyboard */,
+				119E4FD61DFC6BCD0025DD70 /* CodeScanner.storyboard */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		4D11F72B84A22561BDB423D7 /* Pods */ = {
@@ -263,9 +317,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				119E4FDB1DFC70770025DD70 /* bookshop.jpg in Resources */,
+				119E4FDD1DFC70770025DD70 /* books2.jpg in Resources */,
+				119E4FDC1DFC70770025DD70 /* oldschool.jpg in Resources */,
+				119E4FCD1DFC68920025DD70 /* bookslinedup.jpg in Resources */,
+				119E4FCB1DFC68920025DD70 /* slantedbooks.jpg in Resources */,
+				119E4FCF1DFC68920025DD70 /* book.jpg in Resources */,
+				119E4FCE1DFC68920025DD70 /* crowdedbooks.jpg in Resources */,
+				119E4FD71DFC6BCD0025DD70 /* CodeScanner.storyboard in Resources */,
 				1145DE581DF28BB8001EBB5C /* LaunchScreen.storyboard in Resources */,
 				1145DE551DF28BB8001EBB5C /* Assets.xcassets in Resources */,
 				1145DE531DF28BB8001EBB5C /* Main.storyboard in Resources */,
+				119E4FCC1DFC68920025DD70 /* openbooks.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1145DE501DF28BB8001EBB5C /* ViewController.swift in Sources */,
+				119E4FD51DFC6B0C0025DD70 /* BookLoverPageVC.swift in Sources */,
 				1145DE4E1DF28BB8001EBB5C /* AppDelegate.swift in Sources */,
 				1145DE7C1DF28CD7001EBB5C /* GoodreadsAPI.swift in Sources */,
 			);
