@@ -25,6 +25,7 @@
 		119E4FDB1DFC70770025DD70 /* bookshop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 119E4FD81DFC70770025DD70 /* bookshop.jpg */; };
 		119E4FDC1DFC70770025DD70 /* oldschool.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 119E4FD91DFC70770025DD70 /* oldschool.jpg */; };
 		119E4FDD1DFC70770025DD70 /* books2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 119E4FDA1DFC70770025DD70 /* books2.jpg */; };
+		119E4FE01DFC71E90025DD70 /* BookInfo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 119E4FDE1DFC71E90025DD70 /* BookInfo.xcdatamodeld */; };
 		B6D59790CA236B3B0CEFFE25 /* Pods_BookLover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7146FD7E6E1D37EB08684CBD /* Pods_BookLover.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		119E4FD81DFC70770025DD70 /* bookshop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bookshop.jpg; path = ../../../../Downloads/bookshop.jpg; sourceTree = "<group>"; };
 		119E4FD91DFC70770025DD70 /* oldschool.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = oldschool.jpg; path = ../../../../Downloads/oldschool.jpg; sourceTree = "<group>"; };
 		119E4FDA1DFC70770025DD70 /* books2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = books2.jpg; path = ../../../../Downloads/books2.jpg; sourceTree = "<group>"; };
+		119E4FDF1DFC71E90025DD70 /* BookInfo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookInfo.xcdatamodel; sourceTree = "<group>"; };
 		29B886B61605E527A34936A1 /* Pods-BookLover.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookLover.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookLover/Pods-BookLover.release.xcconfig"; sourceTree = "<group>"; };
 		7146FD7E6E1D37EB08684CBD /* Pods_BookLover.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookLover.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B13C07A86A1EE4CB9D5AC278 /* Pods-BookLover.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookLover.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BookLover/Pods-BookLover.debug.xcconfig"; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				1145DE541DF28BB8001EBB5C /* Assets.xcassets */,
 				1145DE561DF28BB8001EBB5C /* LaunchScreen.storyboard */,
 				1145DE591DF28BB8001EBB5C /* Info.plist */,
+				119E4FDE1DFC71E90025DD70 /* BookInfo.xcdatamodeld */,
 				119E4FD01DFC6A8A0025DD70 /* Photos */,
 			);
 			path = BookLover;
@@ -401,6 +404,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				119E4FE01DFC71E90025DD70 /* BookInfo.xcdatamodeld in Sources */,
 				1145DE501DF28BB8001EBB5C /* ViewController.swift in Sources */,
 				119E4FD51DFC6B0C0025DD70 /* BookLoverPageVC.swift in Sources */,
 				1145DE4E1DF28BB8001EBB5C /* AppDelegate.swift in Sources */,
@@ -674,6 +678,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		119E4FDE1DFC71E90025DD70 /* BookInfo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				119E4FDF1DFC71E90025DD70 /* BookInfo.xcdatamodel */,
+			);
+			currentVersion = 119E4FDF1DFC71E90025DD70 /* BookInfo.xcdatamodel */;
+			path = BookInfo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1145DE421DF28BB7001EBB5C /* Project object */;
 }
