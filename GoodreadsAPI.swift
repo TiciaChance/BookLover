@@ -12,7 +12,7 @@ import SWXMLHash
 
 class GoodreadsAPI: NSObject {
     
-
+    var author = String()
     
 
     let key = "mqaiL9tKRtfMngub7an3A"
@@ -27,8 +27,8 @@ class GoodreadsAPI: NSObject {
             
             let bookInfo = xml["GoodreadsResponse"]["search"]["results"]["work"]
             
-            let author = bookInfo["author"]
-            print(xml)
+            self.author = (bookInfo[0]["best_book"]["author"]["name"].element?.text)!
+            print(self.author)
         }
     }
 
