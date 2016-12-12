@@ -42,7 +42,7 @@ class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
             //according to Apple documentation this has to be done on a serial queue - read up on this
             captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
             
-            captureMetadataOutput.metadataObjectTypes = [AVMetadataObjectTypeQRCode, AVMetadataObjectTypeUPCECode, AVMetadataObjectTypeEAN8Code]
+            captureMetadataOutput.metadataObjectTypes = [AVMetadataObjectTypeQRCode, AVMetadataObjectTypeEAN13Code]
             
             codeFrameView = UIView()
             
@@ -68,6 +68,39 @@ class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
         view.bringSubview(toFront: topBar)
         
         captureSession?.startRunning()
+    }
+    
+
+    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
+        
+        // Check if the metadataObjects array is not nil and it contains at least one object.
+        if metadataObjects == nil || metadataObjects.count == 0 {
+            codeFrameView?.frame = CGRect.zero
+            messageLabel.text = "No code has been detected"
+            return
+        }
+        
+        // Get the metadata object.
+        let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
+        
+        if metadataObj.type == AVMetadataObjectTypeQRCode {
+            
+            let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
+            codeFrameView?.frame = barCodeObject!.bounds
+            
+            if metadataObj.stringValue != nil {
+                messageLabel.text = metadataObj.stringValue
+            }
+        } else if metadataObj.type == AVMetadataObjectTypeEAN13Code {
+         
+            let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
+            codeFrameView?.frame = barCodeObject!.bounds
+            
+            if metadataObj.stringValue != nil {
+                messageLabel.text = metadataObj.stringValue
+            }
+        }
+        
     }
 }
 
