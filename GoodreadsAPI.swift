@@ -18,7 +18,7 @@ class GoodreadsAPI: NSObject {
     let key = "mqaiL9tKRtfMngub7an3A"
     let secret = "21zrUDzirF0cRyIENUh2Fwl1cGlJN0RjOTX3eBkO4w"
 
-    func APICall() {
+    func APICall(isbn: String, completed: @escaping () -> ()) {
         Alamofire.request("https://www.goodreads.com/search.xml?key=\(key)&q=Ender%27s+Game").responseString { (response) in
            // print(response.result.value)
             
@@ -30,6 +30,8 @@ class GoodreadsAPI: NSObject {
             self.author = (bookInfo[0]["best_book"]["author"]["name"].element?.text)!
             print(self.author)
         }
+        
+        completed()
     }
 
     

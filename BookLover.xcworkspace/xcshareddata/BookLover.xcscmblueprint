@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "75D4E8787A6C218FFA84A1C3CE7246D83AB1B318",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "8A44939297ED3C966B1B3628C513AD56F499E2A8" : 9223372036854775807,
+    "75D4E8787A6C218FFA84A1C3CE7246D83AB1B318" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "AF7CE728-B5F7-49B3-99C2-0E2DAD8D3A9C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "8A44939297ED3C966B1B3628C513AD56F499E2A8" : "",
+    "75D4E8787A6C218FFA84A1C3CE7246D83AB1B318" : "BookLover\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "BookLover",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "BookLover.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:TiciaChance\/BookLover.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "75D4E8787A6C218FFA84A1C3CE7246D83AB1B318"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:TiciaChance\/NameTheShow.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8A44939297ED3C966B1B3628C513AD56F499E2A8"
+    }
+  ]
+}

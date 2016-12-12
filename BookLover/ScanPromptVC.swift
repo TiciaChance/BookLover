@@ -15,7 +15,9 @@ class ScanPromptVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //can't keep call here 
-        goodreads.APICall()
+        goodreads.APICall(isbn: "9781516966509", completed: {
+        
+        })
         
         let recognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ScanPromptVC.screenTapped(recgognizer:)))
         

@@ -10,7 +10,8 @@ import UIKit
 import AVFoundation
 
 class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
-
+    
+    var goodreads = GoodreadsAPI()
     
     @IBOutlet weak var topBar: UINavigationBar!
     
@@ -85,6 +86,8 @@ class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
         
         if metadataObj.type == AVMetadataObjectTypeQRCode {
             
+            //add vibration when detected
+            
             let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
             codeFrameView?.frame = barCodeObject!.bounds
             
@@ -98,6 +101,10 @@ class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
             
             if metadataObj.stringValue != nil {
                 messageLabel.text = metadataObj.stringValue
+                goodreads.APICall(isbn: metadataObj.stringValue, completed:{
+                    print("woring")
+            })
+            
             }
         }
         
