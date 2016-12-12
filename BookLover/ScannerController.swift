@@ -11,6 +11,10 @@ import AVFoundation
 
 class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
 
+    
+    @IBOutlet weak var topBar: UINavigationBar!
+    
+    @IBOutlet weak var messageLabel: UILabel!
     var captureSession: AVCaptureSession?
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var codeFrameView: UIView?
@@ -40,6 +44,15 @@ class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
             
             captureMetadataOutput.metadataObjectTypes = [AVMetadataObjectTypeQRCode, AVMetadataObjectTypeUPCECode, AVMetadataObjectTypeEAN8Code]
             
+            codeFrameView = UIView()
+            
+            if let codeFrameView = codeFrameView {
+                codeFrameView.layer.borderColor = UIColor.green.cgColor
+                codeFrameView.layer.borderWidth = 2
+                view.addSubview(codeFrameView)
+                view.bringSubview(toFront: codeFrameView)
+            }
+            
         } catch {
             
             print(error)
@@ -50,6 +63,9 @@ class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
         videoPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
         videoPreviewLayer?.frame = view.layer.bounds
         view.layer.addSublayer(videoPreviewLayer!)
+        
+        view.bringSubview(toFront: messageLabel)
+        view.bringSubview(toFront: topBar)
         
         captureSession?.startRunning()
     }

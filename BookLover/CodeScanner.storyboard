@@ -54,8 +54,40 @@
                     <view key="view" contentMode="scaleToFill" id="F2D-Lg-Arr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No QR or barcode is detected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIV-vr-FDL">
+                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                                <color key="backgroundColor" red="0.1110192463" green="0.16534078120000001" blue="0.30228030680000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="5AT-3X-b9p"/>
+                                    <constraint firstAttribute="height" constant="40" id="egW-QM-Vg9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <color key="textColor" red="0.8637371063" green="0.64843130110000002" blue="0.48621857169999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yfL-Z9-M2h">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <color key="backgroundColor" red="0.1110192463" green="0.16534078120000001" blue="0.30228030680000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <navigationItem title="Scan" id="tjk-Wo-rz9"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TjZ-3H-WMs" firstAttribute="top" secondItem="FIV-vr-FDL" secondAttribute="bottom" id="3EX-7G-bl0"/>
+                            <constraint firstAttribute="trailing" secondItem="FIV-vr-FDL" secondAttribute="trailing" id="3yz-de-CFP"/>
+                            <constraint firstItem="FIV-vr-FDL" firstAttribute="leading" secondItem="F2D-Lg-Arr" secondAttribute="leading" id="Rqj-Bt-lQf"/>
+                            <constraint firstItem="yfL-Z9-M2h" firstAttribute="top" secondItem="F2D-Lg-Arr" secondAttribute="top" id="Trm-tk-UUX"/>
+                            <constraint firstAttribute="trailing" secondItem="yfL-Z9-M2h" secondAttribute="trailing" id="WvW-na-eC8"/>
+                            <constraint firstItem="yfL-Z9-M2h" firstAttribute="leading" secondItem="F2D-Lg-Arr" secondAttribute="leading" id="wAd-if-Bxd"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="FIV-vr-FDL" id="pGb-UF-lfy"/>
+                        <outlet property="topBar" destination="yfL-Z9-M2h" id="s7f-BA-9sp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a6w-lU-Yuj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
