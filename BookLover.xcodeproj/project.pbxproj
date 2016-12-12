@@ -130,7 +130,9 @@
 			children = (
 				1145DE4D1DF28BB8001EBB5C /* AppDelegate.swift */,
 				1145DE4F1DF28BB8001EBB5C /* ViewController.swift */,
-				119E4FD31DFC6ACE0025DD70 /* View */,
+				119E4FD41DFC6B0C0025DD70 /* BookLoverPageVC.swift */,
+				1145DE511DF28BB8001EBB5C /* Main.storyboard */,
+				119E4FD61DFC6BCD0025DD70 /* CodeScanner.storyboard */,
 				119E4FD21DFC6AA00025DD70 /* Model */,
 				1145DE541DF28BB8001EBB5C /* Assets.xcassets */,
 				1145DE561DF28BB8001EBB5C /* LaunchScreen.storyboard */,
@@ -180,16 +182,6 @@
 				1145DE7B1DF28CD7001EBB5C /* GoodreadsAPI.swift */,
 			);
 			name = Model;
-			sourceTree = "<group>";
-		};
-		119E4FD31DFC6ACE0025DD70 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				119E4FD41DFC6B0C0025DD70 /* BookLoverPageVC.swift */,
-				1145DE511DF28BB8001EBB5C /* Main.storyboard */,
-				119E4FD61DFC6BCD0025DD70 /* CodeScanner.storyboard */,
-			);
-			name = View;
 			sourceTree = "<group>";
 		};
 		4D11F72B84A22561BDB423D7 /* Pods */ = {
