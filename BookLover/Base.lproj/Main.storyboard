@@ -105,6 +105,19 @@
                             </imageView>
                             <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gDF-7H-AQo">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7O-0d-fcp">
+                                        <rect key="frame" x="120" y="538" width="125" height="64"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
+                                        <state key="normal" title="Begin">
+                                            <color key="titleColor" red="0.94304728510000002" green="0.87615638969999998" blue="0.75864571329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="bYD-il-ABs" kind="show" id="ngF-HX-s2o"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -128,6 +141,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kEU-mj-t0y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2116" y="147.97601199400302"/>
+        </scene>
+        <!--CodeScanner-->
+        <scene sceneID="OJW-rV-KW1">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CodeScanner" id="bYD-il-ABs" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dyI-Pv-hIu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2947" y="176"/>
         </scene>
     </scenes>
     <resources>

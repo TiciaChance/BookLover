@@ -17,11 +17,12 @@ class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        instantiateVidCapture()
 
-        instantiateAVCaptureSession()
     }
     
-    func instantiateAVCaptureSession() {
+    func instantiateVidCapture() {
         let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         
         do {
@@ -34,11 +35,24 @@ class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
             let captureMetadataOutput = AVCaptureMetadataOutput()
             captureSession?.addOutput(captureMetadataOutput)
             
+            //according to Apple documentation this has to be done on a serial queue - read up on this
+            captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+            
+            captureMetadataOutput.metadataObjectTypes = [AVMetadataObjectTypeQRCode, AVMetadataObjectTypeUPCECode, AVMetadataObjectTypeEAN8Code]
+            
         } catch {
             
             print(error)
             return
         }
+        
+        videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        videoPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
+        videoPreviewLayer?.frame = view.layer.bounds
+        view.layer.addSublayer(videoPreviewLayer!)
+        
+        captureSession?.startRunning()
     }
-
 }
+
+
