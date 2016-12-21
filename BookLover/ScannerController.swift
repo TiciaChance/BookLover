@@ -8,25 +8,47 @@
 
 import UIKit
 import AVFoundation
+import AudioToolbox
 
-class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, BookInformationDelegate {
     
-    var goodreads = GoodreadsAPI()
-    
+
+        
     @IBOutlet weak var topBar: UINavigationBar!
     
-    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var messageButton: UIButton!
     var captureSession: AVCaptureSession?
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var codeFrameView: UIView?
     
+    var goodreadData : GoodreadsAPI!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        goodreadData = GoodreadsAPI(delegate: self)
         instantiateVidCapture()
-
+        
     }
     
+    internal func didGetInfo(books: Books) {
+        //
+    }
+    
+    func didNotGetInfo(error: NSError) {
+        //
+    }
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+}
+
+// MARK:: Scanner functions
+
+extension ScannerController {
     func instantiateVidCapture() {
         let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         
@@ -43,7 +65,7 @@ class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
             //according to Apple documentation this has to be done on a serial queue - read up on this
             captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
             
-            captureMetadataOutput.metadataObjectTypes = [AVMetadataObjectTypeQRCode, AVMetadataObjectTypeEAN13Code]
+            captureMetadataOutput.metadataObjectTypes = [ AVMetadataObjectTypeEAN13Code]
             
             codeFrameView = UIView()
             
@@ -65,50 +87,41 @@ class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
         videoPreviewLayer?.frame = view.layer.bounds
         view.layer.addSublayer(videoPreviewLayer!)
         
-        view.bringSubview(toFront: messageLabel)
+        view.bringSubview(toFront: messageButton)
         view.bringSubview(toFront: topBar)
         
         captureSession?.startRunning()
     }
     
-
+    
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
         
         // Check if the metadataObjects array is not nil and it contains at least one object.
         if metadataObjects == nil || metadataObjects.count == 0 {
             codeFrameView?.frame = CGRect.zero
-            messageLabel.text = "No code has been detected"
+            messageButton.setTitle("No code has been detected", for: .normal)
             return
         }
         
-        // Get the metadata object.
         let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
         
-        if metadataObj.type == AVMetadataObjectTypeQRCode {
-            
-            //add vibration when detected
+        if metadataObj.type == AVMetadataObjectTypeEAN13Code {
+
+            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
             
             let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
             codeFrameView?.frame = barCodeObject!.bounds
             
             if metadataObj.stringValue != nil {
-                messageLabel.text = metadataObj.stringValue
-            }
-        } else if metadataObj.type == AVMetadataObjectTypeEAN13Code {
-         
-            let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
-            codeFrameView?.frame = barCodeObject!.bounds
-            
-            if metadataObj.stringValue != nil {
-                messageLabel.text = metadataObj.stringValue
-                goodreads.APICall(isbn: metadataObj.stringValue, completed:{
-                    print("woring")
-            })
-            
+                messageButton.setTitle("Click for book details", for: .normal)
+                                goodreadData.APICall(isbn: metadataObj.stringValue, completed:{
+                                    print("working")
+                                })
+                
             }
         }
         
     }
-}
 
+}
 

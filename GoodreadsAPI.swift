@@ -10,29 +10,39 @@ import UIKit
 import Alamofire
 import SWXMLHash
 
-class GoodreadsAPI: NSObject {
-    
-    var author = String()
-    
+protocol BookInformationDelegate {
+    func didGetInfo(books: Books)
+    func didNotGetInfo(error: NSError)
+}
 
+class GoodreadsAPI: NSObject {
+
+    var delegate : BookInformationDelegate
+    
+    init(delegate: BookInformationDelegate) {
+        self.delegate = delegate
+    }
+    
     let key = "mqaiL9tKRtfMngub7an3A"
     let secret = "21zrUDzirF0cRyIENUh2Fwl1cGlJN0RjOTX3eBkO4w"
-
-    func APICall(isbn: String, completed: @escaping () -> ()) {
-        Alamofire.request("https://www.goodreads.com/search.xml?key=\(key)&q=Ender%27s+Game").responseString { (response) in
-           // print(response.result.value)
+    
+    func APICall(isbn: String, completed: @escaping () -> ())  {
+        
+        Alamofire.request("https://www.goodreads.com/search.xml?key=\(key)&q=\(isbn)").responseString {(response) in
+            // print(response.result.value)
             
             let xml = SWXMLHash.parse(response.data!)
             //print(xml)
             
             let bookInfo = xml["GoodreadsResponse"]["search"]["results"]["work"]
             
-            self.author = (bookInfo[0]["best_book"]["author"]["name"].element?.text)!
-            print(self.author)
-        }
+            let books = try! Books(bookInfo: bookInfo)
+            self.delegate.didGetInfo(books: books)
+            
+           }
         
         completed()
     }
-
+    
     
 }

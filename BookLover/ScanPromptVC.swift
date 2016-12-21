@@ -10,14 +10,9 @@ import UIKit
 
 class ScanPromptVC: UIViewController {
 
-    var goodreads = GoodreadsAPI()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //can't keep call here 
-        goodreads.APICall(isbn: "9781516966509", completed: {
-        
-        })
         
         let recognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ScanPromptVC.screenTapped(recgognizer:)))
         

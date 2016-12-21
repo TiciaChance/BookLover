@@ -27,6 +27,7 @@
 		119E4FDD1DFC70770025DD70 /* books2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 119E4FDA1DFC70770025DD70 /* books2.jpg */; };
 		119E4FE01DFC71E90025DD70 /* BookInfo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 119E4FDE1DFC71E90025DD70 /* BookInfo.xcdatamodeld */; };
 		11A0B22A1DFEDB9A00A13AAA /* ScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0B2291DFEDB9A00A13AAA /* ScannerController.swift */; };
+		11CB263C1E0AF1C500DE2E1A /* Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CB263B1E0AF1C500DE2E1A /* Books.swift */; };
 		B6D59790CA236B3B0CEFFE25 /* Pods_BookLover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7146FD7E6E1D37EB08684CBD /* Pods_BookLover.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,7 @@
 		119E4FDA1DFC70770025DD70 /* books2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = books2.jpg; path = ../../../../Downloads/books2.jpg; sourceTree = "<group>"; };
 		119E4FDF1DFC71E90025DD70 /* BookInfo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookInfo.xcdatamodel; sourceTree = "<group>"; };
 		11A0B2291DFEDB9A00A13AAA /* ScannerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerController.swift; sourceTree = "<group>"; };
+		11CB263B1E0AF1C500DE2E1A /* Books.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Books.swift; sourceTree = "<group>"; };
 		29B886B61605E527A34936A1 /* Pods-BookLover.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookLover.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookLover/Pods-BookLover.release.xcconfig"; sourceTree = "<group>"; };
 		7146FD7E6E1D37EB08684CBD /* Pods_BookLover.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookLover.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B13C07A86A1EE4CB9D5AC278 /* Pods-BookLover.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookLover.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BookLover/Pods-BookLover.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,14 +132,13 @@
 		1145DE4C1DF28BB8001EBB5C /* BookLover */ = {
 			isa = PBXGroup;
 			children = (
-				11A0B2281DFEDB2F00A13AAA /* View */,
+				11CB263D1E0B103500DE2E1A /* Application Delegation */,
 				119E4FD21DFC6AA00025DD70 /* Model */,
 				116554251DFEE71500F3883C /* View Controllers */,
 				116554231DFEE6E100F3883C /* Storyboards */,
 				1145DE591DF28BB8001EBB5C /* Info.plist */,
 				1145DE541DF28BB8001EBB5C /* Assets.xcassets */,
 				119E4FDE1DFC71E90025DD70 /* BookInfo.xcdatamodeld */,
-				1145DE4D1DF28BB8001EBB5C /* AppDelegate.swift */,
 				119E4FD01DFC6A8A0025DD70 /* Photos */,
 			);
 			path = BookLover;
@@ -174,6 +175,7 @@
 		116554251DFEE71500F3883C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				119E4FD41DFC6B0C0025DD70 /* BookLoverPageVC.swift */,
 				11A0B2291DFEDB9A00A13AAA /* ScannerController.swift */,
 				116554211DFEE6BC00F3883C /* ScanPromptVC.swift */,
 			);
@@ -199,16 +201,17 @@
 			isa = PBXGroup;
 			children = (
 				1145DE7B1DF28CD7001EBB5C /* GoodreadsAPI.swift */,
+				11CB263B1E0AF1C500DE2E1A /* Books.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
 		};
-		11A0B2281DFEDB2F00A13AAA /* View */ = {
+		11CB263D1E0B103500DE2E1A /* Application Delegation */ = {
 			isa = PBXGroup;
 			children = (
-				119E4FD41DFC6B0C0025DD70 /* BookLoverPageVC.swift */,
+				1145DE4D1DF28BB8001EBB5C /* AppDelegate.swift */,
 			);
-			name = View;
+			name = "Application Delegation";
 			sourceTree = "<group>";
 		};
 		4D11F72B84A22561BDB423D7 /* Pods */ = {
@@ -425,6 +428,7 @@
 			files = (
 				119E4FE01DFC71E90025DD70 /* BookInfo.xcdatamodeld in Sources */,
 				11A0B22A1DFEDB9A00A13AAA /* ScannerController.swift in Sources */,
+				11CB263C1E0AF1C500DE2E1A /* Books.swift in Sources */,
 				119E4FD51DFC6B0C0025DD70 /* BookLoverPageVC.swift in Sources */,
 				116554221DFEE6BC00F3883C /* ScanPromptVC.swift in Sources */,
 				1145DE4E1DF28BB8001EBB5C /* AppDelegate.swift in Sources */,
