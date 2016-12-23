@@ -14,6 +14,7 @@
 		1145DE631DF28BB8001EBB5C /* BookLoverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1145DE621DF28BB8001EBB5C /* BookLoverTests.swift */; };
 		1145DE6E1DF28BB8001EBB5C /* BookLoverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1145DE6D1DF28BB8001EBB5C /* BookLoverUITests.swift */; };
 		1145DE7C1DF28CD7001EBB5C /* GoodreadsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1145DE7B1DF28CD7001EBB5C /* GoodreadsAPI.swift */; };
+		11505D8F1E0D72E60026EBE5 /* BestsellerGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11505D8E1E0D72E60026EBE5 /* BestsellerGetter.swift */; };
 		116554221DFEE6BC00F3883C /* ScanPromptVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116554211DFEE6BC00F3883C /* ScanPromptVC.swift */; };
 		119E4FCB1DFC68920025DD70 /* slantedbooks.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 119E4FC61DFC68920025DD70 /* slantedbooks.jpg */; };
 		119E4FCC1DFC68920025DD70 /* openbooks.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 119E4FC71DFC68920025DD70 /* openbooks.jpg */; };
@@ -62,6 +63,7 @@
 		1145DE6D1DF28BB8001EBB5C /* BookLoverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookLoverUITests.swift; sourceTree = "<group>"; };
 		1145DE6F1DF28BB8001EBB5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1145DE7B1DF28CD7001EBB5C /* GoodreadsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoodreadsAPI.swift; path = ../GoodreadsAPI.swift; sourceTree = "<group>"; };
+		11505D8E1E0D72E60026EBE5 /* BestsellerGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestsellerGetter.swift; sourceTree = "<group>"; };
 		116554211DFEE6BC00F3883C /* ScanPromptVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanPromptVC.swift; sourceTree = "<group>"; };
 		119E4FC61DFC68920025DD70 /* slantedbooks.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = slantedbooks.jpg; path = ../../../../Downloads/slantedbooks.jpg; sourceTree = "<group>"; };
 		119E4FC71DFC68920025DD70 /* openbooks.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = openbooks.jpg; path = ../../../../Downloads/openbooks.jpg; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 			children = (
 				1145DE7B1DF28CD7001EBB5C /* GoodreadsAPI.swift */,
 				11CB263B1E0AF1C500DE2E1A /* Books.swift */,
+				11505D8E1E0D72E60026EBE5 /* BestsellerGetter.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -302,7 +305,7 @@
 				TargetAttributes = {
 					1145DE491DF28BB7001EBB5C = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = TDFXWLD7DJ;
+						DevelopmentTeam = TAFW84825Y;
 						ProvisioningStyle = Automatic;
 					};
 					1145DE5D1DF28BB8001EBB5C = {
@@ -427,6 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				119E4FE01DFC71E90025DD70 /* BookInfo.xcdatamodeld in Sources */,
+				11505D8F1E0D72E60026EBE5 /* BestsellerGetter.swift in Sources */,
 				11A0B22A1DFEDB9A00A13AAA /* ScannerController.swift in Sources */,
 				11CB263C1E0AF1C500DE2E1A /* Books.swift in Sources */,
 				119E4FD51DFC6B0C0025DD70 /* BookLoverPageVC.swift in Sources */,
@@ -588,7 +592,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = TDFXWLD7DJ;
+				DEVELOPMENT_TEAM = TAFW84825Y;
 				INFOPLIST_FILE = BookLover/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ElectricChance.BookLover;
@@ -603,7 +607,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = TDFXWLD7DJ;
+				DEVELOPMENT_TEAM = TAFW84825Y;
 				INFOPLIST_FILE = BookLover/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ElectricChance.BookLover;

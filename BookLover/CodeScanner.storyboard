@@ -92,7 +92,9 @@
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="Item" id="b9e-KG-qdQ"/>
+                                    <barButtonItem title="Scan" id="b9e-KG-qdQ"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="VFN-kY-dwR"/>
+                                    <barButtonItem title="Item" id="ueT-ZC-VYk"/>
                                 </items>
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q31-xL-gEq">

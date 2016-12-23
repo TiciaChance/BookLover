@@ -43,6 +43,4 @@ class GoodreadsAPI: NSObject {
         
         completed()
     }
-    
-    
 }
