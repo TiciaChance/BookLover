@@ -20,7 +20,7 @@ struct Books {
     init(bookInfo: XMLIndexer) throws {
         self.author = (bookInfo[0]["best_book"]["author"]["name"].element?.text)!
         self.title = (bookInfo[0]["best_book"]["title"].element?.text)!
-        self.imageURL = (bookInfo[0]["best_book"]["image"].element?.text)!
+        self.imageURL = (bookInfo[0]["best_book"]["image_url"].element?.text)!
         self.averageRating = try (bookInfo[0]["average_rating"].value())
         self.publicationYear = try (bookInfo[0]["original_publication_year"].value())
     }

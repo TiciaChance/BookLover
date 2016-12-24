@@ -64,6 +64,10 @@
                                 <state key="normal" title="No QR or barcode is detected">
                                     <color key="titleColor" red="0.8637371063" green="0.64843130110000002" blue="0.48621857169999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="scanCompleteButtonTapped:" destination="qh0-gi-FaU" eventType="touchUpInside" id="lA9-n9-Fai"/>
+                                    <segue destination="ECN-3z-I1x" kind="show" identifier="detailSegue" id="bhQ-7b-cvN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -76,10 +80,10 @@
             </objects>
             <point key="canvasLocation" x="3807.1999999999998" y="97.601199400299862"/>
         </scene>
-        <!--View Controller-->
+        <!--DetailVC-->
         <scene sceneID="auO-lt-KXT">
             <objects>
-                <viewController id="ECN-3z-I1x" sceneMemberID="viewController">
+                <viewController id="ECN-3z-I1x" customClass="DetailVC" customModule="BookLover" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RZN-o9-1i4"/>
                         <viewControllerLayoutGuide type="bottom" id="nMr-9T-9Le"/>
@@ -101,9 +105,42 @@
                                 <rect key="frame" x="67" y="213" width="240" height="240"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3N-GY-6I6" userLabel="Title">
+                                <rect key="frame" x="97" y="128" width="180" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Author" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZz-6X-Ar9" userLabel="Author">
+                                <rect key="frame" x="97" y="166" width="180" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUe-kd-DQM">
+                                <rect key="frame" x="147" y="486" width="80" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNO-d8-89o">
+                                <rect key="frame" x="82" y="557" width="210" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="New York Times Book Review"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="NTYReviewBtn" destination="cNO-d8-89o" id="iAk-LC-ajc"/>
+                        <outlet property="authorLbl" destination="eZz-6X-Ar9" id="Px9-Kb-LY6"/>
+                        <outlet property="bookImage" destination="q31-xL-gEq" id="y4u-8P-dwh"/>
+                        <outlet property="ratingLbl" destination="sUe-kd-DQM" id="Rpr-4C-fiH"/>
+                        <outlet property="titleLbl" destination="k3N-GY-6I6" id="9td-yH-vmT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Shq-sF-Qzc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

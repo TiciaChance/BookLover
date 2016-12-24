@@ -10,36 +10,41 @@ import UIKit
 import AVFoundation
 import AudioToolbox
 
-class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, BookInformationDelegate {
+class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
-
-        
-    @IBOutlet weak var topBar: UINavigationBar!
     
     @IBOutlet weak var messageButton: UIButton!
+    
     var captureSession: AVCaptureSession?
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var codeFrameView: UIView?
-    
-    var goodreadData : GoodreadsAPI!
-    
+
+   let goodreadData = GoodreadsAPI()
+   let bookReviewData = BestsellerGetter()
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        goodreadData = GoodreadsAPI(delegate: self)
+        
+//        goodreadData.APICall(isbn: "9780812993547") { 
+//            print("testing")
+//        }
+        
         instantiateVidCapture()
         
     }
     
-    internal func didGetInfo(books: Books) {
-        //
+    @IBAction func scanCompleteButtonTapped(_ sender: Any) {
+        
     }
     
-    func didNotGetInfo(error: NSError) {
-        //
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailSegue" {
+            let detailVC = segue.destination as! DetailVC
+            detailVC.author = goodreadData.author
+        }
     }
-    
-    
     
     
     override func didReceiveMemoryWarning() {
@@ -90,7 +95,7 @@ extension ScannerController {
         view.layer.addSublayer(videoPreviewLayer!)
         
         view.bringSubview(toFront: messageButton)
-        view.bringSubview(toFront: topBar)
+        //view.bringSubview(toFront: topBar)
         
         captureSession?.startRunning()
     }
@@ -108,7 +113,7 @@ extension ScannerController {
         let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
         
         if metadataObj.type == AVMetadataObjectTypeEAN13Code {
-
+            
             AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
             
             let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
@@ -116,14 +121,17 @@ extension ScannerController {
             
             if metadataObj.stringValue != nil {
                 messageButton.setTitle("Click for book details", for: .normal)
-                                goodreadData.APICall(isbn: metadataObj.stringValue, completed:{
-                                    print("working")
-                                })
+                goodreadData.APICall(isbn: metadataObj.stringValue, completed:{
+                    print("")
+                })
+                bookReviewData.NYTimesBookData(isbn: metadataObj.stringValue, completed: { 
+                    print("book review recieved \(self.bookReviewData.reviewURL)")
+                })
                 
             }
         }
         
     }
-
+    
 }
 

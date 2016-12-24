@@ -10,16 +10,11 @@ import UIKit
 
 class ScanPromptVC: UIViewController {
 
-    var nytTest = BestsellerGetter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nytTest.NYTimesBookData(isbn: "978-0812993547", completed: {
 
-})
-        
-        
         let recognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ScanPromptVC.screenTapped(recgognizer:)))
         
         self.view.addGestureRecognizer(recognizer)

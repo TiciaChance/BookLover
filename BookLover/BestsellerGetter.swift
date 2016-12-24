@@ -10,15 +10,24 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
+
 class BestsellerGetter: NSObject {
 
     var APIkey = "1c39612baa1642ef82cec94ef24d24b1"
     var url =  "https://api.nytimes.com/svc/books/v3/reviews.json?"
+    var reviewURL = String()
  
     func NYTimesBookData(isbn: String, completed: @escaping () -> ()) {
         
         Alamofire.request("https://api.nytimes.com/svc/books/v3/reviews.json?api-key=\(APIkey)&isbn=\(isbn)").responseJSON { (response) in
-            print(response.result.value)
+           
+            guard response.data != nil else {return}
+            
+            let jsonObject = JSON(data: response.data!)
+            
+            self.reviewURL = jsonObject["results"][0]["url"].stringValue
+            print(self.reviewURL)
+            
         }
         completed()
     }

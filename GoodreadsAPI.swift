@@ -10,18 +10,15 @@ import UIKit
 import Alamofire
 import SWXMLHash
 
-protocol BookInformationDelegate {
-    func didGetInfo(books: Books)
-    func didNotGetInfo(error: NSError)
-}
-
 class GoodreadsAPI: NSObject {
 
-    var delegate : BookInformationDelegate
-    
-    init(delegate: BookInformationDelegate) {
-        self.delegate = delegate
-    }
+    var author = String()
+    var title = String()
+    var imageURL = String()
+    var averageRating = Double()
+    var publicationYear = Int()
+
+ 
     
     let key = "mqaiL9tKRtfMngub7an3A"
     let secret = "21zrUDzirF0cRyIENUh2Fwl1cGlJN0RjOTX3eBkO4w"
@@ -29,16 +26,18 @@ class GoodreadsAPI: NSObject {
     func APICall(isbn: String, completed: @escaping () -> ())  {
         
         Alamofire.request("https://www.goodreads.com/search.xml?key=\(key)&q=\(isbn)").responseString {(response) in
-            // print(response.result.value)
             
             let xml = SWXMLHash.parse(response.data!)
-            //print(xml)
             
             let bookInfo = xml["GoodreadsResponse"]["search"]["results"]["work"]
+
+            self.author = (bookInfo[0]["best_book"]["author"]["name"].element?.text)!
+            self.title = (bookInfo[0]["best_book"]["title"].element?.text)!
+            self.imageURL = (bookInfo[0]["best_book"]["image_url"].element?.text)!
+            self.averageRating = try! (bookInfo[0]["average_rating"].value())
+            self.publicationYear = try! (bookInfo[0]["original_publication_year"].value())
             
-            let books = try! Books(bookInfo: bookInfo)
-            self.delegate.didGetInfo(books: books)
-            
+            print(self.imageURL)
            }
         
         completed()
