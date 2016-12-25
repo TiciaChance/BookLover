@@ -21,7 +21,7 @@ class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
     
     var captureSession: AVCaptureSession?
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
-    var codeFrameView: UIView?
+    var player = AVAudioPlayer()
 
     let goodreadData = GoodreadsAPI()
     var bookReviewData = BestsellerGetter()
@@ -30,18 +30,9 @@ class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        goodreadData.APICall(isbn: "9780812993547") { 
-            print("testing")
-        }
-        bookReviewData.NYTimesBookData(isbn: "9780812993547") {
-            //
-        }
-        
         instantiateVidCapture()
         
     }
-
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detailSegue" {
@@ -82,15 +73,7 @@ extension ScannerController {
             captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
             
             captureMetadataOutput.metadataObjectTypes = [ AVMetadataObjectTypeEAN13Code]
-            
-            codeFrameView = UIView()
-            
-            if let codeFrameView = codeFrameView {
-                codeFrameView.layer.borderColor = UIColor.green.cgColor
-                codeFrameView.layer.borderWidth = 2
-                view.addSubview(codeFrameView)
-                view.bringSubview(toFront: codeFrameView)
-            }
+    
             
         } catch {
             
@@ -114,7 +97,6 @@ extension ScannerController {
         
         // Check if the metadataObjects array is not nil and it contains at least one object.
         if metadataObjects == nil || metadataObjects.count == 0 {
-            codeFrameView?.frame = CGRect.zero
             messageButton.setTitle("No code has been detected", for: .normal)
             return
         }
@@ -123,12 +105,8 @@ extension ScannerController {
         
         if metadataObj.type == AVMetadataObjectTypeEAN13Code {
             
-            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-            
-            let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
-            codeFrameView?.frame = barCodeObject!.bounds
-            
             if metadataObj.stringValue != nil {
+                playSound()
                 messageButton.setTitle("Click for book details", for: .normal)
                 goodreadData.APICall(isbn: metadataObj.stringValue, completed:{
                     print("")
@@ -143,5 +121,16 @@ extension ScannerController {
         
     }
     
+    func playSound() {
+        let url = Bundle.main.url(forResource: "Ping", withExtension: "mp3")!
+        
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player.prepareToPlay()
+            player.play()
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
 }
 
