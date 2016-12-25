@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -32,20 +33,25 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slantedbooks.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="e2n-c7-omI">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Book Lover allows you to scan and receive additional book information, while you shop for books." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhw-3W-Imb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Lover allows you to scan and receive additional book information, while you shop for books." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="241" translatesAutoresizingMaskIntoConstraints="NO" id="mhw-3W-Imb">
                                 <rect key="frame" x="67" y="239" width="241" height="189"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="241" id="CNM-8i-xnq"/>
+                                    <constraint firstAttribute="height" constant="189" id="lif-Qw-746"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="mhw-3W-Imb" firstAttribute="centerX" secondItem="e2n-c7-omI" secondAttribute="centerX" id="3fg-s6-sXl"/>
                             <constraint firstItem="FyS-VO-9zL" firstAttribute="top" secondItem="e2n-c7-omI" secondAttribute="bottom" id="9Bh-JU-HUs"/>
                             <constraint firstItem="e2n-c7-omI" firstAttribute="leading" secondItem="B7j-RE-CTt" secondAttribute="leading" id="EBT-Ua-Zud"/>
                             <constraint firstItem="e2n-c7-omI" firstAttribute="top" secondItem="B7j-RE-CTt" secondAttribute="top" id="OvE-Yg-fSh"/>
+                            <constraint firstItem="mhw-3W-Imb" firstAttribute="centerY" secondItem="e2n-c7-omI" secondAttribute="centerY" id="QCt-k6-3xM"/>
                             <constraint firstAttribute="trailing" secondItem="e2n-c7-omI" secondAttribute="trailing" id="bhv-JW-8gf"/>
                         </constraints>
                     </view>
@@ -69,11 +75,14 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crowdedbooks.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="vgI-3g-YUq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Use your camera to scan the book.. " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4b-t9-X2M">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use your camera to scan the book.. " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="241" translatesAutoresizingMaskIntoConstraints="NO" id="E4b-t9-X2M">
                                 <rect key="frame" x="67" y="239" width="241" height="189"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="241" id="pbN-d3-4IP"/>
+                                    <constraint firstAttribute="height" constant="189" id="toD-59-aBz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -81,8 +90,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="vgI-3g-YUq" secondAttribute="trailing" id="6Ns-wN-12W"/>
+                            <constraint firstItem="E4b-t9-X2M" firstAttribute="centerX" secondItem="vgI-3g-YUq" secondAttribute="centerX" id="Q9P-97-9fF"/>
                             <constraint firstItem="vgI-3g-YUq" firstAttribute="leading" secondItem="bDb-bO-NzD" secondAttribute="leading" id="QIR-x4-bfw"/>
                             <constraint firstItem="vgI-3g-YUq" firstAttribute="top" secondItem="bDb-bO-NzD" secondAttribute="top" id="Uwy-Ov-sNk"/>
+                            <constraint firstItem="E4b-t9-X2M" firstAttribute="centerY" secondItem="vgI-3g-YUq" secondAttribute="centerY" id="q4o-Yo-3ry"/>
                             <constraint firstItem="Xfu-x0-OHc" firstAttribute="top" secondItem="vgI-3g-YUq" secondAttribute="bottom" id="zJ9-JW-kkD"/>
                         </constraints>
                     </view>
@@ -106,10 +117,14 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookshop.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="wK8-4C-x9H">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7O-0d-fcp">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7O-0d-fcp">
                                 <rect key="frame" x="125" y="488" width="125" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="WlO-if-0NV"/>
+                                    <constraint firstAttribute="height" constant="65" id="brl-Wc-kmE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="25"/>
                                 <state key="normal" title="Begin">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -117,11 +132,14 @@
                                     <segue destination="bYD-il-ABs" kind="show" id="ngF-HX-s2o"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Then you'll get the rating and New York Time Book review for the book you've scanned!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PN1-ml-lto">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Then you'll get the rating and New York Time Book review for the book you've scanned!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="240" translatesAutoresizingMaskIntoConstraints="NO" id="PN1-ml-lto">
                                 <rect key="frame" x="67" y="239" width="240" height="189"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="XQd-Ou-NMc"/>
+                                    <constraint firstAttribute="height" constant="189" id="aIP-lt-nK4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -129,13 +147,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wK8-4C-x9H" firstAttribute="leading" secondItem="POb-4D-NPs" secondAttribute="leading" id="DbH-Ph-Q44"/>
+                            <constraint firstItem="PN1-ml-lto" firstAttribute="centerX" secondItem="wK8-4C-x9H" secondAttribute="centerX" id="EMO-fW-ahX"/>
                             <constraint firstItem="wK8-4C-x9H" firstAttribute="leading" secondItem="POb-4D-NPs" secondAttribute="leading" id="HEd-2g-c8a"/>
                             <constraint firstItem="wK8-4C-x9H" firstAttribute="top" secondItem="POb-4D-NPs" secondAttribute="top" id="TeW-Jr-UeJ"/>
+                            <constraint firstItem="PN1-ml-lto" firstAttribute="centerY" secondItem="wK8-4C-x9H" secondAttribute="centerY" id="YAX-0U-Kv8"/>
                             <constraint firstItem="ct4-F2-LmO" firstAttribute="top" secondItem="wK8-4C-x9H" secondAttribute="bottom" id="cnU-zH-QOs"/>
                             <constraint firstAttribute="trailing" secondItem="wK8-4C-x9H" secondAttribute="trailing" id="ctJ-bE-Ji1"/>
                             <constraint firstItem="wK8-4C-x9H" firstAttribute="top" secondItem="POb-4D-NPs" secondAttribute="top" id="emY-uY-kyE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="B7O-0d-fcp" secondAttribute="trailing" constant="109" id="lIb-Cs-1xA"/>
                             <constraint firstItem="ct4-F2-LmO" firstAttribute="top" secondItem="wK8-4C-x9H" secondAttribute="bottom" id="mJK-Rz-qNT"/>
                             <constraint firstAttribute="trailing" secondItem="wK8-4C-x9H" secondAttribute="trailing" id="oQc-S3-s1G"/>
+                            <constraint firstItem="ct4-F2-LmO" firstAttribute="top" secondItem="B7O-0d-fcp" secondAttribute="bottom" constant="115" id="tz5-Sl-Axr"/>
                         </constraints>
                     </view>
                 </viewController>

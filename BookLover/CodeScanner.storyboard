@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,12 +29,12 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap To Scan Your Book" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srK-WN-J8w">
                                 <rect key="frame" x="45" y="91" width="285" height="147"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="40"/>
+                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.1110192463" green="0.16534078120000001" blue="0.30228030680000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="uzH-ZG-rFA"/>
                     <connections>
@@ -59,8 +60,8 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPK-nH-OFu">
                                 <rect key="frame" x="0.0" y="627" width="375" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.1110192463" green="0.16534078120000001" blue="0.30228030680000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="20"/>
                                 <state key="normal" title="No QR or barcode is detected">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -91,36 +92,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q31-xL-gEq">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q31-xL-gEq">
                                 <rect key="frame" x="77" y="213" width="220" height="240"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="KOD-FX-v2x"/>
+                                    <constraint firstAttribute="width" constant="220" id="q06-kL-ttP"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="k3N-GY-6I6" userLabel="Title">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="k3N-GY-6I6" userLabel="Title">
                                 <rect key="frame" x="77" y="107" width="220" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="NLj-Ad-Vk4"/>
+                                    <constraint firstAttribute="height" constant="50" id="UmA-Bh-vFD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Author" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="eZz-6X-Ar9" userLabel="Author">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="eZz-6X-Ar9" userLabel="Author">
                                 <rect key="frame" x="77" y="166" width="220" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="44G-SC-0CZ"/>
+                                    <constraint firstAttribute="width" constant="220" id="m4T-ye-Hlk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="sUe-kd-DQM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="sUe-kd-DQM">
                                 <rect key="frame" x="77" y="483" width="220" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="dd0-hC-RFv"/>
+                                    <constraint firstAttribute="width" constant="220" id="xBF-LU-d2s"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNO-d8-89o">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNO-d8-89o">
                                 <rect key="frame" x="69" y="558" width="236" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
-                                <state key="normal" title="NYT Book Review">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="236" id="Kus-VO-1Kg"/>
+                                    <constraint firstAttribute="height" constant="30" id="P5i-wl-PIl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
+                                <state key="normal" title="New York Times Book Review">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -128,7 +144,21 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.1110192463" green="0.16534078120000001" blue="0.30228030680000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cNO-d8-89o" firstAttribute="top" secondItem="sUe-kd-DQM" secondAttribute="bottom" constant="35" id="1e9-gg-TPk"/>
+                            <constraint firstItem="sUe-kd-DQM" firstAttribute="top" secondItem="q31-xL-gEq" secondAttribute="bottom" constant="30" id="6NL-si-JCZ"/>
+                            <constraint firstItem="nMr-9T-9Le" firstAttribute="top" secondItem="cNO-d8-89o" secondAttribute="bottom" constant="79" id="9jb-4f-ouc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="k3N-GY-6I6" secondAttribute="trailing" constant="62" id="AhU-41-2Oj"/>
+                            <constraint firstItem="eZz-6X-Ar9" firstAttribute="top" secondItem="k3N-GY-6I6" secondAttribute="bottom" constant="9" id="LWe-Jg-zK9"/>
+                            <constraint firstItem="q31-xL-gEq" firstAttribute="top" secondItem="eZz-6X-Ar9" secondAttribute="bottom" constant="17" id="TgK-7W-4Rb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eZz-6X-Ar9" secondAttribute="trailing" constant="62" id="fvv-Wj-tWu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sUe-kd-DQM" secondAttribute="trailing" constant="62" id="gvm-mv-GSG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cNO-d8-89o" secondAttribute="trailing" constant="54" id="iB0-Vg-c0z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="q31-xL-gEq" secondAttribute="trailing" constant="62" id="ksw-Bi-5Fr"/>
+                            <constraint firstItem="k3N-GY-6I6" firstAttribute="top" secondItem="RZN-o9-1i4" secondAttribute="bottom" constant="43" id="rUE-6j-La3"/>
+                            <constraint firstItem="q31-xL-gEq" firstAttribute="leading" secondItem="hJU-jR-eZK" secondAttribute="leadingMargin" constant="61" id="s5Z-Ha-iyd"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="NYTReviewButton" destination="cNO-d8-89o" id="i7r-LV-hxv"/>
