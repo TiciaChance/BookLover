@@ -32,21 +32,21 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slantedbooks.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="e2n-c7-omI">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tas-5w-rz3">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Book Lover allows you to scan and receive additional book information, while you shop for books." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhw-3W-Imb">
+                                <rect key="frame" x="67" y="239" width="241" height="189"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Tas-5w-rz3" firstAttribute="leading" secondItem="B7j-RE-CTt" secondAttribute="leading" id="7T1-ET-Mad"/>
                             <constraint firstItem="FyS-VO-9zL" firstAttribute="top" secondItem="e2n-c7-omI" secondAttribute="bottom" id="9Bh-JU-HUs"/>
                             <constraint firstItem="e2n-c7-omI" firstAttribute="leading" secondItem="B7j-RE-CTt" secondAttribute="leading" id="EBT-Ua-Zud"/>
-                            <constraint firstAttribute="trailing" secondItem="Tas-5w-rz3" secondAttribute="trailing" id="Fps-Hs-g09"/>
                             <constraint firstItem="e2n-c7-omI" firstAttribute="top" secondItem="B7j-RE-CTt" secondAttribute="top" id="OvE-Yg-fSh"/>
-                            <constraint firstItem="Tas-5w-rz3" firstAttribute="top" secondItem="B7j-RE-CTt" secondAttribute="top" id="RyF-lR-x8b"/>
                             <constraint firstAttribute="trailing" secondItem="e2n-c7-omI" secondAttribute="trailing" id="bhv-JW-8gf"/>
-                            <constraint firstItem="FyS-VO-9zL" firstAttribute="top" secondItem="Tas-5w-rz3" secondAttribute="bottom" id="ht3-V2-fil"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -69,11 +69,14 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crowdedbooks.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="vgI-3g-YUq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <view alpha="0.20000000000000001" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6CV-3R-8yL">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Use your camera to scan the book.. " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4b-t9-X2M">
+                                <rect key="frame" x="67" y="239" width="241" height="189"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -103,33 +106,31 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookshop.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="wK8-4C-x9H">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gDF-7H-AQo">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7O-0d-fcp">
-                                        <rect key="frame" x="120" y="538" width="125" height="64"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
-                                        <state key="normal" title="Begin">
-                                            <color key="titleColor" red="0.94304728510000002" green="0.87615638969999998" blue="0.75864571329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="bYD-il-ABs" kind="show" id="ngF-HX-s2o"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7O-0d-fcp">
+                                <rect key="frame" x="125" y="488" width="125" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
+                                <state key="normal" title="Begin">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="bYD-il-ABs" kind="show" id="ngF-HX-s2o"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Then you'll get the rating and New York Time Book review for the book you've scanned!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PN1-ml-lto">
+                                <rect key="frame" x="67" y="239" width="240" height="189"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gDF-7H-AQo" firstAttribute="top" secondItem="POb-4D-NPs" secondAttribute="top" id="CAS-L5-94Z"/>
                             <constraint firstItem="wK8-4C-x9H" firstAttribute="leading" secondItem="POb-4D-NPs" secondAttribute="leading" id="DbH-Ph-Q44"/>
                             <constraint firstItem="wK8-4C-x9H" firstAttribute="leading" secondItem="POb-4D-NPs" secondAttribute="leading" id="HEd-2g-c8a"/>
-                            <constraint firstItem="gDF-7H-AQo" firstAttribute="leading" secondItem="POb-4D-NPs" secondAttribute="leading" id="Oci-FH-Iwf"/>
                             <constraint firstItem="wK8-4C-x9H" firstAttribute="top" secondItem="POb-4D-NPs" secondAttribute="top" id="TeW-Jr-UeJ"/>
-                            <constraint firstItem="ct4-F2-LmO" firstAttribute="top" secondItem="gDF-7H-AQo" secondAttribute="bottom" id="XJr-Ts-dhG"/>
-                            <constraint firstAttribute="trailing" secondItem="gDF-7H-AQo" secondAttribute="trailing" id="Z6a-c6-kxJ"/>
                             <constraint firstItem="ct4-F2-LmO" firstAttribute="top" secondItem="wK8-4C-x9H" secondAttribute="bottom" id="cnU-zH-QOs"/>
                             <constraint firstAttribute="trailing" secondItem="wK8-4C-x9H" secondAttribute="trailing" id="ctJ-bE-Ji1"/>
                             <constraint firstItem="wK8-4C-x9H" firstAttribute="top" secondItem="POb-4D-NPs" secondAttribute="top" id="emY-uY-kyE"/>
