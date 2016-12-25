@@ -41,10 +41,7 @@ class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
         instantiateVidCapture()
         
     }
-    
-    func getNYTbookReview(review: BookReviewURL) {
-        //
-    }
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detailSegue" {

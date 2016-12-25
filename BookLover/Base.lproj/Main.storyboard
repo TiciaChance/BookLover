@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -149,15 +148,15 @@
                             <constraint firstItem="wK8-4C-x9H" firstAttribute="leading" secondItem="POb-4D-NPs" secondAttribute="leading" id="DbH-Ph-Q44"/>
                             <constraint firstItem="PN1-ml-lto" firstAttribute="centerX" secondItem="wK8-4C-x9H" secondAttribute="centerX" id="EMO-fW-ahX"/>
                             <constraint firstItem="wK8-4C-x9H" firstAttribute="leading" secondItem="POb-4D-NPs" secondAttribute="leading" id="HEd-2g-c8a"/>
+                            <constraint firstItem="B7O-0d-fcp" firstAttribute="centerX" secondItem="wK8-4C-x9H" secondAttribute="centerX" id="Rck-na-Ky9"/>
                             <constraint firstItem="wK8-4C-x9H" firstAttribute="top" secondItem="POb-4D-NPs" secondAttribute="top" id="TeW-Jr-UeJ"/>
                             <constraint firstItem="PN1-ml-lto" firstAttribute="centerY" secondItem="wK8-4C-x9H" secondAttribute="centerY" id="YAX-0U-Kv8"/>
                             <constraint firstItem="ct4-F2-LmO" firstAttribute="top" secondItem="wK8-4C-x9H" secondAttribute="bottom" id="cnU-zH-QOs"/>
                             <constraint firstAttribute="trailing" secondItem="wK8-4C-x9H" secondAttribute="trailing" id="ctJ-bE-Ji1"/>
                             <constraint firstItem="wK8-4C-x9H" firstAttribute="top" secondItem="POb-4D-NPs" secondAttribute="top" id="emY-uY-kyE"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="B7O-0d-fcp" secondAttribute="trailing" constant="109" id="lIb-Cs-1xA"/>
                             <constraint firstItem="ct4-F2-LmO" firstAttribute="top" secondItem="wK8-4C-x9H" secondAttribute="bottom" id="mJK-Rz-qNT"/>
                             <constraint firstAttribute="trailing" secondItem="wK8-4C-x9H" secondAttribute="trailing" id="oQc-S3-s1G"/>
-                            <constraint firstItem="ct4-F2-LmO" firstAttribute="top" secondItem="B7O-0d-fcp" secondAttribute="bottom" constant="115" id="tz5-Sl-Axr"/>
+                            <constraint firstItem="B7O-0d-fcp" firstAttribute="top" secondItem="PN1-ml-lto" secondAttribute="bottom" constant="60" id="tgn-En-Bgx"/>
                         </constraints>
                     </view>
                 </viewController>
