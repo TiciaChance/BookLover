@@ -11,10 +11,11 @@ import Alamofire
 import SwiftyJSON
 
 
+
 class BestsellerGetter: NSObject {
 
+    
     var APIkey = "1c39612baa1642ef82cec94ef24d24b1"
-    var url =  "https://api.nytimes.com/svc/books/v3/reviews.json?"
     var reviewURL = String()
  
     func NYTimesBookData(isbn: String, completed: @escaping () -> ()) {
@@ -26,8 +27,10 @@ class BestsellerGetter: NSObject {
             let jsonObject = JSON(data: response.data!)
             
             self.reviewURL = jsonObject["results"][0]["url"].stringValue
-            print(self.reviewURL)
             
+           let review = BookReviewURL(reviewURL: self.reviewURL)
+            print(review)
+                                    
         }
         completed()
     }

@@ -17,35 +17,41 @@ class DetailVC: UIViewController {
     @IBOutlet weak var ratingLbl: UILabel!
     @IBOutlet weak var NTYReviewBtn: UIButton!
     
-    //var bookTitle = String()
-    var author = String()
-//    var bookImg = UIImage()
-//    var rating = Int()
+    @IBOutlet weak var NYTReviewButton: UIButton!
     
-    var goodreadData : GoodreadsAPI!
-    var bookReviewData : BestsellerGetter!
+    var bookTitle = String()
+    var author = String()
+    var bookImgURL = String()
+    var rating = Double()
+    var reviewURL = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        titleLbl.text = bookTitle
         authorLbl.text = author
-
+        guard let url = URL(string: bookImgURL) else {
+            print("url not found")
+            bookImage.image = #imageLiteral(resourceName: "book.jpg")
+            return
+        }
+        let data = try? Data(contentsOf: url)
+        bookImage.image = UIImage(data: data!)
+        ratingLbl.text = "Rating: \(String(rating))/5.0"
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let webVC = segue.destination as! WebViewVC
+        webVC.reviewURL = reviewURL
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+   
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    
     }
-    */
+    
 
 }

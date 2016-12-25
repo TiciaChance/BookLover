@@ -10,6 +10,10 @@ import UIKit
 import AVFoundation
 import AudioToolbox
 
+protocol ReviewDelegate {
+    func getNYTbookReview(review: String)
+}
+
 class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     
@@ -19,31 +23,39 @@ class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var codeFrameView: UIView?
 
-   let goodreadData = GoodreadsAPI()
-   let bookReviewData = BestsellerGetter()
+    let goodreadData = GoodreadsAPI()
+    var bookReviewData = BestsellerGetter()
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-//        goodreadData.APICall(isbn: "9780812993547") { 
-//            print("testing")
-//        }
+        goodreadData.APICall(isbn: "9780812993547") { 
+            print("testing")
+        }
+        bookReviewData.NYTimesBookData(isbn: "9780812993547") {
+            //
+        }
         
         instantiateVidCapture()
         
     }
     
-    @IBAction func scanCompleteButtonTapped(_ sender: Any) {
-        
+    func getNYTbookReview(review: BookReviewURL) {
+        //
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detailSegue" {
             let detailVC = segue.destination as! DetailVC
             detailVC.author = goodreadData.author
-        }
+            detailVC.bookTitle = goodreadData.title
+            detailVC.bookImgURL = goodreadData.imageURL
+            detailVC.rating = goodreadData.averageRating
+            
+            detailVC.reviewURL = bookReviewData.reviewURL
+        } 
     }
     
     
@@ -126,6 +138,7 @@ extension ScannerController {
                 })
                 bookReviewData.NYTimesBookData(isbn: metadataObj.stringValue, completed: { 
                     print("book review recieved \(self.bookReviewData.reviewURL)")
+                    
                 })
                 
             }

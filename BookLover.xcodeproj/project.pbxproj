@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		110C00EF1E0EC6880017E1AE /* BookReviewURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110C00EE1E0EC6880017E1AE /* BookReviewURL.swift */; };
 		110C00F11E0ECFA00017E1AE /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110C00F01E0ECFA00017E1AE /* DetailVC.swift */; };
+		110C00F51E0EEC780017E1AE /* WebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110C00F41E0EEC780017E1AE /* WebViewVC.swift */; };
 		1145DE4E1DF28BB8001EBB5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1145DE4D1DF28BB8001EBB5C /* AppDelegate.swift */; };
 		1145DE531DF28BB8001EBB5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1145DE511DF28BB8001EBB5C /* Main.storyboard */; };
 		1145DE551DF28BB8001EBB5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1145DE541DF28BB8001EBB5C /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 /* Begin PBXFileReference section */
 		110C00EE1E0EC6880017E1AE /* BookReviewURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookReviewURL.swift; sourceTree = "<group>"; };
 		110C00F01E0ECFA00017E1AE /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		110C00F41E0EEC780017E1AE /* WebViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewVC.swift; sourceTree = "<group>"; };
 		1145DE4A1DF28BB8001EBB5C /* BookLover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookLover.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1145DE4D1DF28BB8001EBB5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1145DE521DF28BB8001EBB5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				11A0B2291DFEDB9A00A13AAA /* ScannerController.swift */,
 				116554211DFEE6BC00F3883C /* ScanPromptVC.swift */,
 				110C00F01E0ECFA00017E1AE /* DetailVC.swift */,
+				110C00F41E0EEC780017E1AE /* WebViewVC.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				11505D8F1E0D72E60026EBE5 /* BestsellerGetter.swift in Sources */,
 				11A0B22A1DFEDB9A00A13AAA /* ScannerController.swift in Sources */,
 				11CB263C1E0AF1C500DE2E1A /* Books.swift in Sources */,
+				110C00F51E0EEC780017E1AE /* WebViewVC.swift in Sources */,
 				119E4FD51DFC6B0C0025DD70 /* BookLoverPageVC.swift in Sources */,
 				110C00F11E0ECFA00017E1AE /* DetailVC.swift in Sources */,
 				110C00EF1E0EC6880017E1AE /* BookReviewURL.swift in Sources */,
