@@ -8,5 +8,7 @@ target 'BookLover' do
     pod 'Alamofire', '~> 4.0'
     pod 'SWXMLHash', '~> 3.0.0'
     pod 'SwiftyJSON'
+    pod 'NVActivityIndicatorView'
+
 
 end

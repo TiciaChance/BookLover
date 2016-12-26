@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>NVActivityIndicatorView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-BookLover.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3A41F88E4B92BA02461BCBA76CC39CA3</key>
+		<key>070374204E491EF7E794313D14C6950B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>562D72580CA020D59D906CF9BB48CE1E</key>
+		<key>2607DF3227F0E6B3B5248AF37A2060AC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5F188EC85F65FE06B1AC2F9D59AF8F2E</key>
+		<key>76F054D3F61FD3BD1478A0119D9BA5C4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>93AEB9B9BDBDEF1228E7D69329510C08</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
-class WebViewVC: UIViewController {
+class WebViewVC: UIViewController, UIWebViewDelegate, NVActivityIndicatorViewable {
     
+    @IBOutlet var activityIndicatorView: NVActivityIndicatorView!
     
     @IBOutlet weak var articleWebView: UIWebView!
     
@@ -17,9 +19,11 @@ class WebViewVC: UIViewController {
     
     var infoFromScanner = ScannerController()
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.articleWebView.delegate = self
+        self.startAnimating(CGSize(width: 70, height: 70), message: "Loading", messageFont: UIFont(name: "Didot", size: CGFloat(50)), type: .ballPulse, color: UIColor.black)
         
         guard let url = URL(string: reviewURL) else {
             print("review not available")
@@ -29,9 +33,12 @@ class WebViewVC: UIViewController {
         let urlRequest = URLRequest(url: url)
         articleWebView.loadRequest(urlRequest)
         
-        }
+    }
     
-
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        self.stopAnimating()
+        print("finished loading")
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

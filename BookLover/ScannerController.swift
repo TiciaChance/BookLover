@@ -32,6 +32,15 @@ class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
         
         instantiateVidCapture()
         
+      
+        goodreadData.APICall(isbn: "9780812993547") {
+            //
+        }
+        
+        bookReviewData.NYTimesBookData(isbn: "9780812993547") {
+            //
+        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -87,7 +96,6 @@ extension ScannerController {
         view.layer.addSublayer(videoPreviewLayer!)
         
         view.bringSubview(toFront: messageButton)
-        //view.bringSubview(toFront: topBar)
         
         captureSession?.startRunning()
     }

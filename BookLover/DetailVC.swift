@@ -37,14 +37,17 @@ class DetailVC: UIViewController {
         }
         let data = try? Data(contentsOf: url)
         bookImage.image = UIImage(data: data!)
-        ratingLbl.text = "Rating: \(String(rating))/5.0"
+        ratingLbl.text = "Rating: \(String(rating))/5.00"
+        
+        
         
     }
 
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let webVC = segue.destination as! WebViewVC
-        webVC.reviewURL = reviewURL
+        
+         webVC.reviewURL = reviewURL
     }
     
    
