@@ -37,7 +37,7 @@ class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
             //
         }
         
-        bookReviewData.NYTimesBookData(isbn: "9780812993547") {
+        bookReviewData.NYTimesBookData(isbn: "9780812993544") {
             //
         }
         

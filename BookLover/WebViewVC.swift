@@ -26,13 +26,10 @@ class WebViewVC: UIViewController, UIWebViewDelegate, NVActivityIndicatorViewabl
         self.startAnimating(CGSize(width: 70, height: 70), message: "Loading", messageFont: UIFont(name: "Didot", size: CGFloat(50)), type: .ballPulse, color: UIColor.black)
         
         guard let url = URL(string: reviewURL) else {
-            
-            print("review not available")
             return
         }
         
-        print("WEB \n\n\n\n \(reviewURL)")
-        print(url)
+        
 
         let urlRequest = URLRequest(url: url)
         articleWebView.loadRequest(urlRequest)

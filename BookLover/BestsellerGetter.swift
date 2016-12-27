@@ -24,7 +24,12 @@ class BestsellerGetter: NSObject {
             
             let jsonObject = JSON(data: response.data!)
             
-            self.reviewURL = jsonObject["results"][0]["url"].stringValue
+            if jsonObject["results"].isEmpty {
+                self.reviewURL = "http://www.nytimes.com/section/books/review"
+            } else {
+                self.reviewURL = jsonObject["results"][0]["url"].stringValue
+
+            }
             
             print("BEST SELLER GETTER --->> \(self.reviewURL)")
         }
