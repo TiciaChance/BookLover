@@ -11,14 +11,14 @@ import Alamofire
 import SWXMLHash
 
 class GoodreadsAPI: NSObject {
-
+    
     var author = String()
     var title = String()
     var imageURL = String()
     var averageRating = Double()
     var publicationYear = Int()
-
- 
+    
+    
     
     let key = "mqaiL9tKRtfMngub7an3A"
     let secret = "21zrUDzirF0cRyIENUh2Fwl1cGlJN0RjOTX3eBkO4w"
@@ -27,21 +27,32 @@ class GoodreadsAPI: NSObject {
         
         Alamofire.request("https://www.goodreads.com/search.xml?key=\(key)&q=\(isbn)").responseString {(response) in
             
+            
+            
             let xml = SWXMLHash.parse(response.data!)
             
-            
             let bookInfo = xml["GoodreadsResponse"]["search"]["results"]["work"]
-
-            self.author = (bookInfo[0]["best_book"]["author"]["name"].element?.text)!
+            let test = xml["GoodreadsResponse"]["search"]
             
-            self.title = (bookInfo[0]["best_book"]["title"].element?.text)!
-
-            self.imageURL = (bookInfo[0]["best_book"]["image_url"].element?.text)!
-            self.averageRating = try! (bookInfo[0]["average_rating"].value())
-            self.publicationYear = try! (bookInfo[0]["original_publication_year"].value())
+            let total_results: Int = try! test["total-results"].value()
+            print(total_results)
             
-            print(self.imageURL)
-           }
+            if total_results == 0 {
+                self.author = "NOT FOUND"
+                self.title = "NOT FOUND"
+                self.averageRating = 0
+            } else {
+                
+                self.author = (bookInfo[0]["best_book"]["author"]["name"].element?.text)!
+                
+                self.title = (bookInfo[0]["best_book"]["title"].element?.text)!
+                
+                self.imageURL = (bookInfo[0]["best_book"]["image_url"].element?.text)!
+                self.averageRating = try! (bookInfo[0]["average_rating"].value())
+                self.publicationYear = try! (bookInfo[0]["original_publication_year"].value())
+            }
+            
+        }
         
         completed()
     }

@@ -33,7 +33,7 @@ class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
         instantiateVidCapture()
         
       
-        goodreadData.APICall(isbn: "9780812993547") {
+        goodreadData.APICall(isbn: "9780812993544") {
             //
         }
         
