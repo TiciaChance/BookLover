@@ -35,7 +35,6 @@ class GoodreadsAPI: NSObject {
             let test = xml["GoodreadsResponse"]["search"]
             
             let total_results: Int = try! test["total-results"].value()
-            print(total_results)
             
             if total_results == 0 {
                 self.author = "NOT FOUND"

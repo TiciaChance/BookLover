@@ -30,8 +30,11 @@ class BestsellerGetter: NSObject {
                 self.reviewURL = jsonObject["results"][0]["url"].stringValue
 
             }
+            print("\(jsonObject)")
             
-            print("BEST SELLER GETTER --->> \(self.reviewURL)")
+            //self.reviewURL = jsonObject["results"][0]["url"].stringValue
+
+            
         }
         completed()
     }

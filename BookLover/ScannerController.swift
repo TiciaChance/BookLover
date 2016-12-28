@@ -22,24 +22,24 @@ class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
     var captureSession: AVCaptureSession?
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var player = AVAudioPlayer()
-
+    var codeFrameView: UIView?
+    
     let goodreadData = GoodreadsAPI()
     var bookReviewData = BestsellerGetter()
-
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         instantiateVidCapture()
         
-      
-        goodreadData.APICall(isbn: "9780812993544") {
-            //
-        }
-        
-        bookReviewData.NYTimesBookData(isbn: "9780812993544") {
-            //
-        }
+        goodreadData.APICall(isbn: "9780812993547", completed:{
+            print("got code - now going to goodreads data")
+        })
+        bookReviewData.NYTimesBookData(isbn: "9780812993547", completed: {
+            
+        })
+
         
     }
     
@@ -52,9 +52,8 @@ class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
             detailVC.rating = goodreadData.averageRating
             
             detailVC.reviewURL = bookReviewData.reviewURL
-        } 
+        }
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -72,7 +71,6 @@ extension ScannerController {
             let input = try AVCaptureDeviceInput(device: captureDevice)
             
             captureSession = AVCaptureSession()
-            
             captureSession?.addInput(input)
             
             let captureMetadataOutput = AVCaptureMetadataOutput()
@@ -80,9 +78,26 @@ extension ScannerController {
             
             //according to Apple documentation this has to be done on a serial queue - read up on this
             captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-            
             captureMetadataOutput.metadataObjectTypes = [ AVMetadataObjectTypeEAN13Code]
-    
+            
+            videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+            videoPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
+            videoPreviewLayer?.frame = view.layer.bounds
+            view.layer.addSublayer(videoPreviewLayer!)
+            
+            view.bringSubview(toFront: messageButton)
+            
+            captureSession?.startRunning()
+            
+            codeFrameView = UIView()
+            
+            if let codeFrameView = codeFrameView {
+                codeFrameView.layer.borderColor = UIColor.green.cgColor
+                codeFrameView.layer.borderWidth = 3
+                view.addSubview(codeFrameView)
+                view.bringSubview(toFront: codeFrameView)
+            }
+            
             
         } catch {
             
@@ -90,14 +105,7 @@ extension ScannerController {
             return
         }
         
-        videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        videoPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
-        videoPreviewLayer?.frame = view.layer.bounds
-        view.layer.addSublayer(videoPreviewLayer!)
-        
-        view.bringSubview(toFront: messageButton)
-        
-        captureSession?.startRunning()
+       
     }
     
     
@@ -105,6 +113,8 @@ extension ScannerController {
         
         // Check if the metadataObjects array is not nil and it contains at least one object.
         if metadataObjects == nil || metadataObjects.count == 0 {
+            codeFrameView?.frame = CGRect.zero
+
             messageButton.setTitle("No code has been detected", for: .normal)
             return
         }
@@ -113,32 +123,28 @@ extension ScannerController {
         
         if metadataObj.type == AVMetadataObjectTypeEAN13Code {
             
+            
+            let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
+            codeFrameView?.frame = barCodeObject!.bounds
+            
             if metadataObj.stringValue != nil {
-                playSound()
-                messageButton.setTitle("Click for book details", for: .normal)
+                
+                
                 goodreadData.APICall(isbn: metadataObj.stringValue, completed:{
-                    print("")
+                    print("got code - now going to goodreads data")
                 })
-                bookReviewData.NYTimesBookData(isbn: metadataObj.stringValue, completed: { 
-                    print("book review recieved \(self.bookReviewData.reviewURL)")
-                    
+                bookReviewData.NYTimesBookData(isbn: metadataObj.stringValue, completed: {
+                   
                 })
                 
+                messageButton.setTitle("Click for book details", for: .normal)
+
             }
+            self.captureSession?.stopRunning()
         }
         
     }
     
-    func playSound() {
-        let url = Bundle.main.url(forResource: "Ping", withExtension: "mp3")!
-        
-        do {
-            player = try AVAudioPlayer(contentsOf: url)
-            player.prepareToPlay()
-            player.play()
-        } catch let error {
-            print(error.localizedDescription)
-        }
-    }
+
 }
 

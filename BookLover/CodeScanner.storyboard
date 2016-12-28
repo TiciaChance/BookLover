@@ -116,7 +116,7 @@
                                     <constraint firstAttribute="width" constant="220" id="q06-kL-ttP"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="k3N-GY-6I6" userLabel="Title">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="k3N-GY-6I6" userLabel="Title">
                                 <rect key="frame" x="77" y="107" width="220" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="NLj-Ad-Vk4"/>

@@ -28,8 +28,6 @@ class WebViewVC: UIViewController, UIWebViewDelegate, NVActivityIndicatorViewabl
         guard let url = URL(string: reviewURL) else {
             return
         }
-        
-        
 
         let urlRequest = URLRequest(url: url)
         articleWebView.loadRequest(urlRequest)

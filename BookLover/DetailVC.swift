@@ -31,7 +31,6 @@ class DetailVC: UIViewController {
         titleLbl.text = bookTitle
         authorLbl.text = author
         guard let url = URL(string: bookImgURL) else {
-            print("url not found")
             bookImage.image = #imageLiteral(resourceName: "book.jpg")
             return
         }
