@@ -22,7 +22,9 @@ class BestsellerGetter: NSObject {
         
         Alamofire.request("https://api.nytimes.com/svc/books/v3/reviews.json?api-key=\(APIkey)&isbn=\(isbn)").responseJSON { (response) in
             
-            let jsonObject = JSON(data: response.data!)
+            guard let data = response.data else {return}
+            
+            let jsonObject = JSON(data: data)
             
             if jsonObject["results"].isEmpty {
                 self.reviewURL = "http://www.nytimes.com/section/books/review"

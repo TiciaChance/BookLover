@@ -27,9 +27,9 @@ class GoodreadsAPI: NSObject {
         
         Alamofire.request("https://www.goodreads.com/search.xml?key=\(key)&q=\(isbn)").responseString {(response) in
             
-            
-            
-            let xml = SWXMLHash.parse(response.data!)
+            guard let data = response.data else {return}
+
+            let xml = SWXMLHash.parse(data)
             
             let bookInfo = xml["GoodreadsResponse"]["search"]["results"]["work"]
             let test = xml["GoodreadsResponse"]["search"]
@@ -37,15 +37,13 @@ class GoodreadsAPI: NSObject {
             let total_results: Int = try! test["total-results"].value()
             
             if total_results == 0 {
-                self.author = "NOT FOUND"
-                self.title = "NOT FOUND"
+                self.author = "Sorry, not found"
+                self.title = "Sorry, not found"
                 self.averageRating = 0
             } else {
                 
                 self.author = (bookInfo[0]["best_book"]["author"]["name"].element?.text)!
-                
                 self.title = (bookInfo[0]["best_book"]["title"].element?.text)!
-                
                 self.imageURL = (bookInfo[0]["best_book"]["image_url"].element?.text)!
                 self.averageRating = try! (bookInfo[0]["average_rating"].value())
                 self.publicationYear = try! (bookInfo[0]["original_publication_year"].value())
