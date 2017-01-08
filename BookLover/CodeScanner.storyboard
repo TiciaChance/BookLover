@@ -1,60 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="PHp-ld-9lp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tQT-aW-5An">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Scan PromptVC-->
-        <scene sceneID="HTE-33-ZyV">
-            <objects>
-                <viewController id="Mx9-nW-4FO" customClass="ScanPromptVC" customModule="BookLover" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="smc-QW-RsY"/>
-                        <viewControllerLayoutGuide type="bottom" id="EWk-Ab-E69"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ah1-5q-5y5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap To Scan Your Book" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srK-WN-J8w">
-                                <rect key="frame" x="45" y="91" width="285" height="147"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="285" id="4Nq-XR-WQg"/>
-                                    <constraint firstAttribute="height" constant="147" id="g4f-gM-RfB"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="40"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="open-book (3)" translatesAutoresizingMaskIntoConstraints="NO" id="ggF-sN-caC">
-                                <rect key="frame" x="123" y="269.5" width="128" height="128"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="srK-WN-J8w" secondAttribute="trailing" constant="29" id="B4e-uV-Duz"/>
-                            <constraint firstItem="srK-WN-J8w" firstAttribute="centerX" secondItem="Ah1-5q-5y5" secondAttribute="centerX" id="FQS-fB-7hm"/>
-                            <constraint firstItem="srK-WN-J8w" firstAttribute="top" secondItem="smc-QW-RsY" secondAttribute="bottom" constant="27" id="RYB-KP-Ful"/>
-                            <constraint firstItem="ggF-sN-caC" firstAttribute="centerY" secondItem="Ah1-5q-5y5" secondAttribute="centerY" id="V2o-pN-84b"/>
-                            <constraint firstItem="ggF-sN-caC" firstAttribute="centerX" secondItem="Ah1-5q-5y5" secondAttribute="centerX" id="jh3-gu-Beh"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="uzH-ZG-rFA"/>
-                    <connections>
-                        <segue destination="qh0-gi-FaU" kind="show" identifier="scannerSegue" id="CeL-ZO-MLi"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hkZ-ED-Fxa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3141.5999999999999" y="97.601199400299862"/>
-        </scene>
-        <!--Scanner Controller-->
+        <!--Scanner-->
         <scene sceneID="caw-UD-oEf">
             <objects>
                 <viewController id="qh0-gi-FaU" customClass="ScannerController" customModule="BookLover" customModuleProvider="target" sceneMemberID="viewController">
@@ -89,13 +44,14 @@
                             <constraint firstItem="TjZ-3H-WMs" firstAttribute="top" secondItem="mPK-nH-OFu" secondAttribute="bottom" id="yuT-i4-YXB"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Scanner" id="068-fT-t1E"/>
                     <connections>
                         <outlet property="messageButton" destination="mPK-nH-OFu" id="UVk-UW-gVO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a6w-lU-Yuj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3807.1999999999998" y="97.601199400299862"/>
+            <point key="canvasLocation" x="4746.3999999999996" y="97.601199400299862"/>
         </scene>
         <!--DetailVC-->
         <scene sceneID="auO-lt-KXT">
@@ -108,73 +64,7 @@
                     <view key="view" contentMode="scaleToFill" id="hJU-jR-eZK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q31-xL-gEq">
-                                <rect key="frame" x="77" y="213" width="220" height="240"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="240" id="KOD-FX-v2x"/>
-                                    <constraint firstAttribute="width" constant="220" id="q06-kL-ttP"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="k3N-GY-6I6" userLabel="Title">
-                                <rect key="frame" x="77" y="107" width="220" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="220" id="NLj-Ad-Vk4"/>
-                                    <constraint firstAttribute="height" constant="50" id="UmA-Bh-vFD"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="18"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="eZz-6X-Ar9" userLabel="Author">
-                                <rect key="frame" x="77" y="166" width="220" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="44G-SC-0CZ"/>
-                                    <constraint firstAttribute="width" constant="220" id="m4T-ye-Hlk"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="18"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="sUe-kd-DQM">
-                                <rect key="frame" x="77" y="483" width="220" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="dd0-hC-RFv"/>
-                                    <constraint firstAttribute="width" constant="220" id="xBF-LU-d2s"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNO-d8-89o">
-                                <rect key="frame" x="37.5" y="558" width="300" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="Kus-VO-1Kg"/>
-                                    <constraint firstAttribute="height" constant="30" id="P5i-wl-PIl"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
-                                <state key="normal" title="New York Times Book Review">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="ihV-32-MAQ" kind="show" id="oBZ-X0-3du"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="cNO-d8-89o" firstAttribute="top" secondItem="sUe-kd-DQM" secondAttribute="bottom" constant="35" id="1e9-gg-TPk"/>
-                            <constraint firstItem="sUe-kd-DQM" firstAttribute="top" secondItem="q31-xL-gEq" secondAttribute="bottom" constant="30" id="6NL-si-JCZ"/>
-                            <constraint firstItem="nMr-9T-9Le" firstAttribute="top" secondItem="cNO-d8-89o" secondAttribute="bottom" constant="79" id="9jb-4f-ouc"/>
-                            <constraint firstItem="k3N-GY-6I6" firstAttribute="centerX" secondItem="hJU-jR-eZK" secondAttribute="centerX" id="CXU-oa-06K"/>
-                            <constraint firstItem="eZz-6X-Ar9" firstAttribute="top" secondItem="k3N-GY-6I6" secondAttribute="bottom" constant="9" id="LWe-Jg-zK9"/>
-                            <constraint firstItem="q31-xL-gEq" firstAttribute="top" secondItem="eZz-6X-Ar9" secondAttribute="bottom" constant="17" id="TgK-7W-4Rb"/>
-                            <constraint firstItem="q31-xL-gEq" firstAttribute="centerX" secondItem="hJU-jR-eZK" secondAttribute="centerX" id="hM8-IB-CNw"/>
-                            <constraint firstItem="k3N-GY-6I6" firstAttribute="top" secondItem="RZN-o9-1i4" secondAttribute="bottom" constant="43" id="rUE-6j-La3"/>
-                            <constraint firstItem="sUe-kd-DQM" firstAttribute="centerX" secondItem="hJU-jR-eZK" secondAttribute="centerX" id="rgS-h9-SYL"/>
-                            <constraint firstItem="cNO-d8-89o" firstAttribute="centerX" secondItem="hJU-jR-eZK" secondAttribute="centerX" id="rjh-bW-beR"/>
-                            <constraint firstItem="eZz-6X-Ar9" firstAttribute="centerX" secondItem="hJU-jR-eZK" secondAttribute="centerX" id="waG-4L-qZP"/>
-                        </constraints>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="NYTReviewButton" destination="cNO-d8-89o" id="i7r-LV-hxv"/>
@@ -186,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Shq-sF-Qzc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4479.1999999999998" y="97.601199400299862"/>
+            <point key="canvasLocation" x="5418.3999999999996" y="97.601199400299862"/>
         </scene>
         <!--Web ViewVC-->
         <scene sceneID="z2a-wS-lNT">
@@ -204,6 +94,39 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q31-xL-gEq">
+                                <rect key="frame" x="0.0" y="182" width="375" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="k3N-GY-6I6" userLabel="Title">
+                                <rect key="frame" x="28" y="453" width="318" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="23"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Author" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="eZz-6X-Ar9" userLabel="Author">
+                                <rect key="frame" x="28" y="519" width="318" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="23"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="sUe-kd-DQM">
+                                <rect key="frame" x="35" y="597" width="220" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="23"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNO-d8-89o">
+                                <rect key="frame" x="-5" y="415" width="300" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
+                                <state key="normal" title="New York Times Book Review">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ihV-32-MAQ" kind="show" id="oBZ-X0-3du"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -220,28 +143,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aJU-hz-cdt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5124" y="97.601199400299862"/>
+            <point key="canvasLocation" x="6063.1999999999998" y="97.601199400299862"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="i2l-Cm-riz">
+        <scene sceneID="xvf-Cf-nsr">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PHp-ld-9lp" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tQT-aW-5An" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cGE-9n-nAf">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bMc-HM-rl6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Mx9-nW-4FO" kind="relationship" relationship="rootViewController" id="jZH-S2-wJA"/>
+                        <segue destination="qh0-gi-FaU" kind="relationship" relationship="rootViewController" id="DB5-eZ-APg"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sSB-RR-7gv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j9r-wk-SVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2202.4000000000001" y="97.601199400299862"/>
+            <point key="canvasLocation" x="3807.1999999999998" y="97.601199400299862"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="open-book (3)" width="128" height="128"/>
-    </resources>
 </document>

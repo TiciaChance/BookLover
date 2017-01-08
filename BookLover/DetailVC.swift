@@ -36,7 +36,7 @@ class DetailVC: UIViewController {
         }
         let data = try? Data(contentsOf: url)
         bookImage.image = UIImage(data: data!)
-        ratingLbl.text = "Rating: \(String(rating))/5.00"
+        ratingLbl.text = "Rating: \(String(rating))"
         
         
         

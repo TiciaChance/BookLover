@@ -31,16 +31,21 @@ class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       // messageButton.isEnabled = false
         instantiateVidCapture()
         
-        goodreadData.APICall(isbn: "9780812993547", completed:{
-            print("got code - now going to goodreads data")
-        })
+       
+             goodreadData.APICall(isbn: "9780812993547", completed:{
+                print("GOODREADS API -- > in viewdidload")
+                
+               
+            })
+        
         bookReviewData.NYTimesBookData(isbn: "9780812993547", completed: {
-            
+            print("NYTIMES API -- > in viewdidload")
+
         })
 
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -111,10 +116,10 @@ extension ScannerController {
     
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
         
-        // Check if the metadataObjects array is not nil and it contains at least one object.
         if metadataObjects == nil || metadataObjects.count == 0 {
             codeFrameView?.frame = CGRect.zero
-
+            
+           // messageButton.isEnabled = true
             messageButton.setTitle("No code has been detected", for: .normal)
             return
         }
@@ -129,10 +134,13 @@ extension ScannerController {
             
             if metadataObj.stringValue != nil {
                 
-                
-                goodreadData.APICall(isbn: metadataObj.stringValue, completed:{
+                do {
+                    try goodreadData.APICall(isbn: metadataObj.stringValue, completed:{
                     print("got code - now going to goodreads data")
                 })
+                } catch {
+                    print("there has been an error")
+                }
                 bookReviewData.NYTimesBookData(isbn: metadataObj.stringValue, completed: {
                    
                 })
