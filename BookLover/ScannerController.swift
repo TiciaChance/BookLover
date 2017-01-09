@@ -31,11 +31,12 @@ class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       // messageButton.isEnabled = false
+        //messageButton.isEnabled = false
         instantiateVidCapture()
         
        
-             goodreadData.APICall(isbn: "9780812993547", completed:{
+        //calls in view did load to stimulate isbn # usually received by scanner
+             goodreadData.APICall(isbn: "9781400032716", completed:{
                 print("GOODREADS API -- > in viewdidload")
                 
                
@@ -48,6 +49,10 @@ class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
 
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.captureSession?.startRunning()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detailSegue" {
             let detailVC = segue.destination as! DetailVC
@@ -55,6 +60,9 @@ class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
             detailVC.bookTitle = goodreadData.title
             detailVC.bookImgURL = goodreadData.imageURL
             detailVC.rating = goodreadData.averageRating
+            detailVC.bookDescription = goodreadData.bookDescription
+            detailVC.bookPublisher = goodreadData.publisher
+            detailVC.pages = goodreadData.numOfPages
             
             detailVC.reviewURL = bookReviewData.reviewURL
         }
@@ -119,7 +127,7 @@ extension ScannerController {
         if metadataObjects == nil || metadataObjects.count == 0 {
             codeFrameView?.frame = CGRect.zero
             
-           // messageButton.isEnabled = true
+            messageButton.isEnabled = true
             messageButton.setTitle("No code has been detected", for: .normal)
             return
         }
@@ -134,13 +142,10 @@ extension ScannerController {
             
             if metadataObj.stringValue != nil {
                 
-                do {
-                    try goodreadData.APICall(isbn: metadataObj.stringValue, completed:{
+                goodreadData.APICall(isbn: metadataObj.stringValue, completed:{
                     print("got code - now going to goodreads data")
                 })
-                } catch {
-                    print("there has been an error")
-                }
+                
                 bookReviewData.NYTimesBookData(isbn: metadataObj.stringValue, completed: {
                    
                 })

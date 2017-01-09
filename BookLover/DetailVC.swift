@@ -15,15 +15,21 @@ class DetailVC: UIViewController {
     @IBOutlet weak var authorLbl: UILabel!
     @IBOutlet weak var bookImage: UIImageView!
     @IBOutlet weak var ratingLbl: UILabel!
-    @IBOutlet weak var NTYReviewBtn: UIButton!
     
+    @IBOutlet weak var numOfPagesLabel: UILabel!
     @IBOutlet weak var NYTReviewButton: UIButton!
+    @IBOutlet weak var publisherLabel: UILabel!
+
+
     
     var bookTitle = String()
     var author = String()
     var bookImgURL = String()
-    var rating = Double()
+    var rating = String()
     var reviewURL = String()
+    var bookDescription = String()
+    var bookPublisher = String()
+    var pages = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,16 +42,15 @@ class DetailVC: UIViewController {
         }
         let data = try? Data(contentsOf: url)
         bookImage.image = UIImage(data: data!)
-        ratingLbl.text = "Rating: \(String(rating))"
-        
-        
-        
+        ratingLbl.text = "Rating: \(rating)"
+        numOfPagesLabel.text = "Number of pages: \(pages)"
+        publisherLabel.text = "Publisher: \(bookPublisher)"
+    
     }
 
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let webVC = segue.destination as! WebViewVC
-        
          webVC.reviewURL = reviewURL
     }
     

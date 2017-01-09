@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -56,27 +57,128 @@
         <!--DetailVC-->
         <scene sceneID="auO-lt-KXT">
             <objects>
-                <viewController id="ECN-3z-I1x" customClass="DetailVC" customModule="BookLover" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="ECN-3z-I1x" customClass="DetailVC" customModule="BookLover" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RZN-o9-1i4"/>
                         <viewControllerLayoutGuide type="bottom" id="nMr-9T-9Le"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hJU-jR-eZK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q31-xL-gEq">
+                                <rect key="frame" x="0.0" y="92" width="375" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="vBB-4r-Ggt"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uf8-VR-DJU">
+                                <rect key="frame" x="117" y="354" width="141" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8Vf-Bg-U82"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
+                                <state key="normal" title="See description">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" preferredMaxLayoutWidth="330" translatesAutoresizingMaskIntoConstraints="NO" id="k3N-GY-6I6" userLabel="Title">
+                                <rect key="frame" x="22" y="406" width="330" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="X1C-Mh-LXc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="eZz-6X-Ar9" userLabel="Author">
+                                <rect key="frame" x="22" y="451" width="330" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="m19-L5-6CW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="sUe-kd-DQM">
+                                <rect key="frame" x="109" y="494" width="156" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="wyk-yO-qCv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="16"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# of Pages" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="WhT-Br-xuh">
+                                <rect key="frame" x="109" y="532" width="156" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="OOR-NE-mrk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="16"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Publisher" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="3AE-YW-yeP">
+                                <rect key="frame" x="22" y="570" width="330" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="0vh-To-7Ek"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="16"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNO-d8-89o">
+                                <rect key="frame" x="29" y="643" width="316" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="88s-pV-8CF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="20"/>
+                                <state key="normal" title="New York Times Book Review">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ihV-32-MAQ" kind="show" id="oBZ-X0-3du"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nMr-9T-9Le" firstAttribute="top" secondItem="cNO-d8-89o" secondAttribute="bottom" constant="20" id="0Mq-IO-rL6"/>
+                            <constraint firstItem="q31-xL-gEq" firstAttribute="leading" secondItem="hJU-jR-eZK" secondAttribute="leading" id="10P-Kp-U3Y"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eZz-6X-Ar9" secondAttribute="trailing" constant="7" id="4pE-p0-jaM"/>
+                            <constraint firstItem="k3N-GY-6I6" firstAttribute="leading" secondItem="hJU-jR-eZK" secondAttribute="leadingMargin" constant="6" id="4qh-fS-7GQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="uf8-VR-DJU" secondAttribute="trailing" constant="101" id="5PG-x5-1Gy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WhT-Br-xuh" secondAttribute="trailing" constant="94" id="7AZ-vg-xs5"/>
+                            <constraint firstItem="WhT-Br-xuh" firstAttribute="leading" secondItem="hJU-jR-eZK" secondAttribute="leadingMargin" constant="93" id="H0G-x1-r49"/>
+                            <constraint firstItem="WhT-Br-xuh" firstAttribute="top" secondItem="sUe-kd-DQM" secondAttribute="bottom" constant="8" id="Obh-n4-dA2"/>
+                            <constraint firstItem="cNO-d8-89o" firstAttribute="leading" secondItem="hJU-jR-eZK" secondAttribute="leadingMargin" constant="13" id="Pi0-xG-KJL"/>
+                            <constraint firstItem="sUe-kd-DQM" firstAttribute="top" secondItem="eZz-6X-Ar9" secondAttribute="bottom" constant="8" id="QjQ-9Z-eut"/>
+                            <constraint firstItem="eZz-6X-Ar9" firstAttribute="leading" secondItem="hJU-jR-eZK" secondAttribute="leadingMargin" constant="6" id="U3i-lx-1nh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sUe-kd-DQM" secondAttribute="trailing" constant="94" id="a5p-O4-WnE"/>
+                            <constraint firstItem="k3N-GY-6I6" firstAttribute="top" secondItem="uf8-VR-DJU" secondAttribute="bottom" constant="22" id="eVz-uW-BLA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="k3N-GY-6I6" secondAttribute="trailing" constant="7" id="eYQ-bA-so7"/>
+                            <constraint firstItem="3AE-YW-yeP" firstAttribute="top" secondItem="WhT-Br-xuh" secondAttribute="bottom" constant="8" id="gs7-hB-QZk"/>
+                            <constraint firstItem="uf8-VR-DJU" firstAttribute="leading" secondItem="hJU-jR-eZK" secondAttribute="leadingMargin" constant="101" id="iQu-OU-qey"/>
+                            <constraint firstAttribute="trailing" secondItem="q31-xL-gEq" secondAttribute="trailing" id="iyj-eY-7DG"/>
+                            <constraint firstItem="3AE-YW-yeP" firstAttribute="leading" secondItem="hJU-jR-eZK" secondAttribute="leadingMargin" constant="6" id="kLr-tf-SxM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3AE-YW-yeP" secondAttribute="trailing" constant="7" id="m5g-Rj-roh"/>
+                            <constraint firstItem="sUe-kd-DQM" firstAttribute="leading" secondItem="hJU-jR-eZK" secondAttribute="leadingMargin" constant="93" id="mui-7N-eUL"/>
+                            <constraint firstItem="q31-xL-gEq" firstAttribute="top" secondItem="RZN-o9-1i4" secondAttribute="bottom" constant="28" id="nHq-u4-YRf"/>
+                            <constraint firstItem="uf8-VR-DJU" firstAttribute="top" secondItem="q31-xL-gEq" secondAttribute="bottom" constant="22" id="pOq-Pk-WSk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cNO-d8-89o" secondAttribute="trailing" constant="14" id="paC-fR-ZlB"/>
+                            <constraint firstItem="eZz-6X-Ar9" firstAttribute="top" secondItem="k3N-GY-6I6" secondAttribute="bottom" id="qL4-nf-hCd"/>
+                        </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="700"/>
                     <connections>
                         <outlet property="NYTReviewButton" destination="cNO-d8-89o" id="i7r-LV-hxv"/>
                         <outlet property="authorLbl" destination="eZz-6X-Ar9" id="Px9-Kb-LY6"/>
                         <outlet property="bookImage" destination="q31-xL-gEq" id="y4u-8P-dwh"/>
+                        <outlet property="numOfPagesLabel" destination="WhT-Br-xuh" id="wtM-DO-Mlx"/>
+                        <outlet property="publisherLabel" destination="3AE-YW-yeP" id="Ae9-Ew-VPg"/>
                         <outlet property="ratingLbl" destination="sUe-kd-DQM" id="Rpr-4C-fiH"/>
                         <outlet property="titleLbl" destination="k3N-GY-6I6" id="9td-yH-vmT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Shq-sF-Qzc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5418.3999999999996" y="97.601199400299862"/>
+            <point key="canvasLocation" x="5418.3999999999996" y="97.151424287856074"/>
         </scene>
         <!--Web ViewVC-->
         <scene sceneID="z2a-wS-lNT">
@@ -94,39 +196,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q31-xL-gEq">
-                                <rect key="frame" x="0.0" y="182" width="375" height="240"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="k3N-GY-6I6" userLabel="Title">
-                                <rect key="frame" x="28" y="453" width="318" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="23"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Author" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="eZz-6X-Ar9" userLabel="Author">
-                                <rect key="frame" x="28" y="519" width="318" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="23"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="sUe-kd-DQM">
-                                <rect key="frame" x="35" y="597" width="220" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="23"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNO-d8-89o">
-                                <rect key="frame" x="-5" y="415" width="300" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
-                                <state key="normal" title="New York Times Book Review">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="ihV-32-MAQ" kind="show" id="oBZ-X0-3du"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -136,6 +205,8 @@
                             <constraint firstItem="XRj-uG-ryI" firstAttribute="top" secondItem="Khm-7y-nap" secondAttribute="bottom" id="wCr-FO-qAK"/>
                         </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="activityIndicatorView" destination="qmM-DX-7GE" id="df8-qQ-dES"/>
                         <outlet property="articleWebView" destination="Khm-7y-nap" id="qb6-3R-HPJ"/>

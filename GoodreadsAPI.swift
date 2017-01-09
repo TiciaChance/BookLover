@@ -15,8 +15,10 @@ class GoodreadsAPI: NSObject {
     var author = String()
     var title = String()
     var imageURL = String()
-    var averageRating = Double()
-    var publicationYear = Int()
+    var averageRating = String()
+    var bookDescription = String()
+    var numOfPages = String()
+    var publisher = String()
     
     var hyphenatedAuthor = String()
     var hyphenatedTitle = String()
@@ -42,21 +44,22 @@ class GoodreadsAPI: NSObject {
             if total_results == 0 {
                 self.author = "Sorry, not found"
                 self.title = "Sorry, not found"
-                self.averageRating = 0
+                self.averageRating = "0"
+            } else {
+                
+                self.author = (bookInfo[0]["best_book"]["author"]["name"].element?.text)!
+                self.title = (bookInfo[0]["best_book"]["title"].element?.text)!
+                self.imageURL = (bookInfo[0]["best_book"]["image_url"].element?.text)!
+                self.averageRating = (bookInfo[0]["average_rating"].element?.text)!
+                print(self.averageRating)
+                
+                self.hyphenatedAuthor = self.author.replacingOccurrences(of: " ", with: "+")
+                self.hyphenatedTitle = self.title.replacingOccurrences(of: " ", with: "-")
+                
+                self.moreDetails(bookAuthor: self.hyphenatedAuthor, bookTitle: self.hyphenatedTitle, completed: {
+                })
+                
             }
-            
-            self.author = (bookInfo[0]["best_book"]["author"]["name"].element?.text)!
-            self.title = (bookInfo[0]["best_book"]["title"].element?.text)!
-            self.imageURL = (bookInfo[0]["best_book"]["image_url"].element?.text)!
-            self.averageRating = try! (bookInfo[0]["average_rating"].value())
-            self.publicationYear = try! (bookInfo[0]["original_publication_year"].value())
-            
-            self.hyphenatedAuthor = self.author.replacingOccurrences(of: " ", with: "+")
-            self.hyphenatedTitle = self.title.replacingOccurrences(of: " ", with: "-")
-            
-            self.moreDetails(bookAuthor: self.hyphenatedAuthor, bookTitle: self.hyphenatedTitle, completed: {
-            })
-            
         }
         
         completed()
@@ -71,10 +74,10 @@ class GoodreadsAPI: NSObject {
             
             let xml = SWXMLHash.parse(data)
             
-            //publisher 
-            //number of pages 
-            //description
+            self.bookDescription = (xml["GoodreadsResponse"]["book"]["description"].element?.text)!
             
+            self.numOfPages = (xml["GoodreadsResponse"]["book"]["num_pages"].element?.text)!
+            self.publisher = (xml["GoodreadsResponse"]["book"]["publisher"].element?.text)!
             
         }
         
