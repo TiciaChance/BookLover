@@ -20,7 +20,9 @@ class DetailVC: UIViewController {
     @IBOutlet weak var NYTReviewButton: UIButton!
     @IBOutlet weak var publisherLabel: UILabel!
 
-
+    var overlayView = UIView()
+    var descriptionLabel = UILabel()
+    var doneButton = UIButton()
     
     var bookTitle = String()
     var author = String()
@@ -54,11 +56,51 @@ class DetailVC: UIViewController {
          webVC.reviewURL = reviewURL
     }
     
-   
+    @IBAction func descriptionButtonTapped(_ sender: Any) {
+        
+        showOverlay(overlayView: overlayView)
+    }
+    
+    func showOverlay(overlayView: UIView) {
+        
+        //view
+        overlayView.frame = self.view.frame
+        overlayView.center = view.center
+        overlayView.backgroundColor = UIColor.black
+        overlayView.alpha = 0.8
+        
+        //label
+        descriptionLabel.frame = overlayView.frame
+        descriptionLabel.lineBreakMode = .byWordWrapping
+        descriptionLabel.numberOfLines = .max
+        descriptionLabel.textColor = UIColor.white
+        descriptionLabel.textAlignment = .center
+        let newBookDescription = bookDescription.replacingOccurrences(of: "<br />", with: " ")
+        descriptionLabel.text = newBookDescription
+        
+        //button
+        doneButton = UIButton(frame: CGRect(origin: CGPoint(x: self.view.frame.width/2 + 75, y: self.view.frame.height - 60), size: CGSize(width: 100, height: 50)))
+        doneButton.setTitle("Done", for: .normal)
+        doneButton.alpha = 1.0
+        doneButton.setTitleColor(UIColor.red, for: .normal)
+       // doneButton.backgroundColor = UIColor.white
+
+        overlayView.addSubview(descriptionLabel)
+        overlayView.addSubview(doneButton)
+        view.addSubview(overlayView)
+        
+        doneButton.addTarget(self, action: #selector(self.click(sender:)), for: .touchUpInside)
+
+        
+    }
+    
+    func click(sender: UIButton) {
+        overlayView.removeFromSuperview()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     
     }
     
-
 }
