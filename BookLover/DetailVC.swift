@@ -89,12 +89,12 @@ class DetailVC: UIViewController {
         overlayView.addSubview(doneButton)
         view.addSubview(overlayView)
         
-        doneButton.addTarget(self, action: #selector(self.click(sender:)), for: .touchUpInside)
+        doneButton.addTarget(self, action: #selector(self.doneButtonTapped(sender:)), for: .touchUpInside)
 
         
     }
     
-    func click(sender: UIButton) {
+    func doneButtonTapped(sender: UIButton) {
         overlayView.removeFromSuperview()
     }
     

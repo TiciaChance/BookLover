@@ -78,5 +78,3 @@ extension BookLoverPageVC: UIPageViewControllerDataSource {
         return orderedViewControllers[nextIndex]
     }
 }
-
-//icon by Zlatko Najdenovski

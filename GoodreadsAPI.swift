@@ -51,7 +51,6 @@ class GoodreadsAPI: NSObject {
                 self.title = (bookInfo[0]["best_book"]["title"].element?.text)!
                 self.imageURL = (bookInfo[0]["best_book"]["image_url"].element?.text)!
                 self.averageRating = (bookInfo[0]["average_rating"].element?.text)!
-                print(self.averageRating)
                 
                 self.hyphenatedAuthor = self.author.replacingOccurrences(of: " ", with: "+")
                 self.hyphenatedTitle = self.title.replacingOccurrences(of: " ", with: "-")

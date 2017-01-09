@@ -31,22 +31,9 @@ class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //messageButton.isEnabled = false
+        messageButton.isEnabled = false
         instantiateVidCapture()
         
-       
-        //calls in view did load to stimulate isbn # usually received by scanner
-             goodreadData.APICall(isbn: "9781400032716", completed:{
-                print("GOODREADS API -- > in viewdidload")
-                
-               
-            })
-        
-        bookReviewData.NYTimesBookData(isbn: "9780812993547", completed: {
-            print("NYTIMES API -- > in viewdidload")
-
-        })
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -89,7 +76,6 @@ extension ScannerController {
             let captureMetadataOutput = AVCaptureMetadataOutput()
             captureSession?.addOutput(captureMetadataOutput)
             
-            //according to Apple documentation this has to be done on a serial queue - read up on this
             captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
             captureMetadataOutput.metadataObjectTypes = [ AVMetadataObjectTypeEAN13Code]
             
@@ -118,7 +104,7 @@ extension ScannerController {
             return
         }
         
-       
+        
     }
     
     
@@ -147,17 +133,17 @@ extension ScannerController {
                 })
                 
                 bookReviewData.NYTimesBookData(isbn: metadataObj.stringValue, completed: {
-                   
+                    
                 })
                 
                 messageButton.setTitle("Click for book details", for: .normal)
-
+                
             }
             self.captureSession?.stopRunning()
         }
         
     }
     
-
+    
 }
 
