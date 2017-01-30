@@ -10,6 +10,17 @@ import UIKit
 import Alamofire
 import SWXMLHash
 
+typealias GoodreadsCompletion = (GoodreadsResponse) -> Void
+
+enum GoodreadsResponse {
+    case success(response: GoodreadsResponseData)
+    case failure(error: Error)
+}
+
+struct GoodreadsResponseData {
+    public let results : [BookDetails]
+}
+
 class GoodreadsAPI: NSObject {
     
     var author = String()
@@ -39,25 +50,25 @@ class GoodreadsAPI: NSObject {
             let test = xml["GoodreadsResponse"]["search"]
             
             
-            let total_results: Int = try! test["total-results"].value()
+//            let total_results: Int = try! test["total-results"].value()
+//            
+//            if total_results == 0 {
+//                self.author = "Sorry, not found"
+//                self.title = "Sorry, not found"
+//                self.averageRating = "0"
+//            } else {
+//                
+//                self.author = (bookInfo[0]["best_book"]["author"]["name"].element?.text)!
+//                self.title = (bookInfo[0]["best_book"]["title"].element?.text)!
+//                self.imageURL = (bookInfo[0]["best_book"]["image_url"].element?.text)!
+//                self.averageRating = (bookInfo[0]["average_rating"].element?.text)!
+//                
+//                self.hyphenatedAuthor = self.author.replacingOccurrences(of: " ", with: "+")
+//                self.hyphenatedTitle = self.title.replacingOccurrences(of: " ", with: "-")
+//                
+//                self.moreDetails(bookAuthor: self.hyphenatedAuthor, bookTitle: self.hyphenatedTitle, completed: {
+//                })
             
-            if total_results == 0 {
-                self.author = "Sorry, not found"
-                self.title = "Sorry, not found"
-                self.averageRating = "0"
-            } else {
-                
-                self.author = (bookInfo[0]["best_book"]["author"]["name"].element?.text)!
-                self.title = (bookInfo[0]["best_book"]["title"].element?.text)!
-                self.imageURL = (bookInfo[0]["best_book"]["image_url"].element?.text)!
-                self.averageRating = (bookInfo[0]["average_rating"].element?.text)!
-                
-                self.hyphenatedAuthor = self.author.replacingOccurrences(of: " ", with: "+")
-                self.hyphenatedTitle = self.title.replacingOccurrences(of: " ", with: "-")
-                
-                self.moreDetails(bookAuthor: self.hyphenatedAuthor, bookTitle: self.hyphenatedTitle, completed: {
-                })
-                
             }
         }
         

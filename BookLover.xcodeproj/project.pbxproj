@@ -17,6 +17,8 @@
 		1145DE6E1DF28BB8001EBB5C /* BookLoverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1145DE6D1DF28BB8001EBB5C /* BookLoverUITests.swift */; };
 		1145DE7C1DF28CD7001EBB5C /* GoodreadsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1145DE7B1DF28CD7001EBB5C /* GoodreadsAPI.swift */; };
 		11505D8F1E0D72E60026EBE5 /* BestsellerGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11505D8E1E0D72E60026EBE5 /* BestsellerGetter.swift */; };
+		1193994F1E32689500F48653 /* GoodreadsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1193994E1E32689500F48653 /* GoodreadsParser.swift */; };
+		119399511E3268CA00F48653 /* NYTimesParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119399501E3268CA00F48653 /* NYTimesParser.swift */; };
 		119E4FCB1DFC68920025DD70 /* slantedbooks.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 119E4FC61DFC68920025DD70 /* slantedbooks.jpg */; };
 		119E4FCC1DFC68920025DD70 /* openbooks.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 119E4FC71DFC68920025DD70 /* openbooks.jpg */; };
 		119E4FCD1DFC68920025DD70 /* bookslinedup.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 119E4FC81DFC68920025DD70 /* bookslinedup.jpg */; };
@@ -27,7 +29,7 @@
 		119E4FDB1DFC70770025DD70 /* bookshop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 119E4FD81DFC70770025DD70 /* bookshop.jpg */; };
 		119E4FDC1DFC70770025DD70 /* oldschool.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 119E4FD91DFC70770025DD70 /* oldschool.jpg */; };
 		119E4FDD1DFC70770025DD70 /* books2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 119E4FDA1DFC70770025DD70 /* books2.jpg */; };
-		11A0B22A1DFEDB9A00A13AAA /* ScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0B2291DFEDB9A00A13AAA /* ScannerController.swift */; };
+		11A0B22A1DFEDB9A00A13AAA /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0B2291DFEDB9A00A13AAA /* ScannerViewController.swift */; };
 		B6D59790CA236B3B0CEFFE25 /* Pods_BookLover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7146FD7E6E1D37EB08684CBD /* Pods_BookLover.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +67,8 @@
 		1145DE6F1DF28BB8001EBB5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1145DE7B1DF28CD7001EBB5C /* GoodreadsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoodreadsAPI.swift; path = ../GoodreadsAPI.swift; sourceTree = "<group>"; };
 		11505D8E1E0D72E60026EBE5 /* BestsellerGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestsellerGetter.swift; sourceTree = "<group>"; };
+		1193994E1E32689500F48653 /* GoodreadsParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodreadsParser.swift; sourceTree = "<group>"; };
+		119399501E3268CA00F48653 /* NYTimesParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYTimesParser.swift; sourceTree = "<group>"; };
 		119E4FC61DFC68920025DD70 /* slantedbooks.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = slantedbooks.jpg; path = ../../../../Downloads/slantedbooks.jpg; sourceTree = "<group>"; };
 		119E4FC71DFC68920025DD70 /* openbooks.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = openbooks.jpg; path = ../../../../Downloads/openbooks.jpg; sourceTree = "<group>"; };
 		119E4FC81DFC68920025DD70 /* bookslinedup.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bookslinedup.jpg; path = ../../../../Downloads/bookslinedup.jpg; sourceTree = "<group>"; };
@@ -75,7 +79,7 @@
 		119E4FD81DFC70770025DD70 /* bookshop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bookshop.jpg; path = ../../../../Downloads/bookshop.jpg; sourceTree = "<group>"; };
 		119E4FD91DFC70770025DD70 /* oldschool.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = oldschool.jpg; path = ../../../../Downloads/oldschool.jpg; sourceTree = "<group>"; };
 		119E4FDA1DFC70770025DD70 /* books2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = books2.jpg; path = ../../../../Downloads/books2.jpg; sourceTree = "<group>"; };
-		11A0B2291DFEDB9A00A13AAA /* ScannerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerController.swift; sourceTree = "<group>"; };
+		11A0B2291DFEDB9A00A13AAA /* ScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		29B886B61605E527A34936A1 /* Pods-BookLover.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookLover.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookLover/Pods-BookLover.release.xcconfig"; sourceTree = "<group>"; };
 		7146FD7E6E1D37EB08684CBD /* Pods_BookLover.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookLover.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B13C07A86A1EE4CB9D5AC278 /* Pods-BookLover.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookLover.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BookLover/Pods-BookLover.debug.xcconfig"; sourceTree = "<group>"; };
@@ -133,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				11CB263D1E0B103500DE2E1A /* Application Delegation */,
+				1193994D1E3267F900F48653 /* Networking */,
 				119E4FD21DFC6AA00025DD70 /* Model */,
 				116554251DFEE71500F3883C /* View Controllers */,
 				116554231DFEE6E100F3883C /* Storyboards */,
@@ -175,11 +180,20 @@
 			isa = PBXGroup;
 			children = (
 				119E4FD41DFC6B0C0025DD70 /* BookLoverPageVC.swift */,
-				11A0B2291DFEDB9A00A13AAA /* ScannerController.swift */,
+				11A0B2291DFEDB9A00A13AAA /* ScannerViewController.swift */,
 				110C00F01E0ECFA00017E1AE /* DetailVC.swift */,
 				110C00F41E0EEC780017E1AE /* WebViewVC.swift */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		1193994D1E3267F900F48653 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				1145DE7B1DF28CD7001EBB5C /* GoodreadsAPI.swift */,
+				11505D8E1E0D72E60026EBE5 /* BestsellerGetter.swift */,
+			);
+			name = Networking;
 			sourceTree = "<group>";
 		};
 		119E4FD01DFC6A8A0025DD70 /* Photos */ = {
@@ -200,8 +214,8 @@
 		119E4FD21DFC6AA00025DD70 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1145DE7B1DF28CD7001EBB5C /* GoodreadsAPI.swift */,
-				11505D8E1E0D72E60026EBE5 /* BestsellerGetter.swift */,
+				1193994E1E32689500F48653 /* GoodreadsParser.swift */,
+				119399501E3268CA00F48653 /* NYTimesParser.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -426,11 +440,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				119399511E3268CA00F48653 /* NYTimesParser.swift in Sources */,
 				11505D8F1E0D72E60026EBE5 /* BestsellerGetter.swift in Sources */,
-				11A0B22A1DFEDB9A00A13AAA /* ScannerController.swift in Sources */,
+				11A0B22A1DFEDB9A00A13AAA /* ScannerViewController.swift in Sources */,
 				110C00F51E0EEC780017E1AE /* WebViewVC.swift in Sources */,
 				119E4FD51DFC6B0C0025DD70 /* BookLoverPageVC.swift in Sources */,
 				110C00F11E0ECFA00017E1AE /* DetailVC.swift in Sources */,
+				1193994F1E32689500F48653 /* GoodreadsParser.swift in Sources */,
 				1145DE4E1DF28BB8001EBB5C /* AppDelegate.swift in Sources */,
 				1145DE7C1DF28CD7001EBB5C /* GoodreadsAPI.swift in Sources */,
 			);

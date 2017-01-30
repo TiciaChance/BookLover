@@ -10,31 +10,32 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
+typealias NYTimesCompletion = (BookReviewResponse) -> Void
 
+enum BookReviewResponse {
+    case success(response: BookReviewResponseData)
+    case failure(error: Error)
+}
+
+struct BookReviewResponseData {
+    let result : [BookReview]
+}
 
 class BestsellerGetter: NSObject {
     
+    let baseURL = "https://api.nytimes.com/svc/books/v3/reviews.json"
+    let APIkey = "1c39612baa1642ef82cec94ef24d24b1"
     
-    var APIkey = "1c39612baa1642ef82cec94ef24d24b1"
-    var reviewURL = String()
-    
-    func NYTimesBookData(isbn: String, completed: @escaping () -> ()) {
+    func NYTimesBookData(isbn: String, completed: @escaping NYTimesCompletion) {
         
-        Alamofire.request("https://api.nytimes.com/svc/books/v3/reviews.json?api-key=\(APIkey)&isbn=\(isbn)").responseJSON { (response) in
-            
-            guard let data = response.data else {return}
-            
-            let jsonObject = JSON(data: data)
-            
-            if jsonObject["results"].isEmpty {
-                self.reviewURL = "http://www.nytimes.com/section/books/review"
+        Alamofire.request("\(baseURL)?api-key=\(APIkey)&isbn=\(isbn)").responseJSON { (response) in
+            if let data = response.result.value {
+                let review = NYTimesParser.BookReviewParser(json: data)
+                completed(.success(response: BookReviewResponseData(result: review)))
             } else {
-                self.reviewURL = jsonObject["results"][0]["url"].stringValue
-
+                completed(.failure(error: response.result.error ?? NSError()))
             }
-            print("\(jsonObject)")
             
         }
-        completed()
     }
 }

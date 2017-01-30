@@ -17,7 +17,7 @@ class WebViewVC: UIViewController, UIWebViewDelegate, NVActivityIndicatorViewabl
     
     var reviewURL = String()
     
-    var infoFromScanner = ScannerController()
+    var infoFromScanner = ScannerViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()

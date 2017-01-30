@@ -13,7 +13,7 @@
         <!--Scanner-->
         <scene sceneID="caw-UD-oEf">
             <objects>
-                <viewController id="qh0-gi-FaU" customClass="ScannerController" customModule="BookLover" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qh0-gi-FaU" customClass="ScannerViewController" customModule="BookLover" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VD7-ep-8qH"/>
                         <viewControllerLayoutGuide type="bottom" id="TjZ-3H-WMs"/>
@@ -47,7 +47,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Scanner" id="068-fT-t1E"/>
                     <connections>
-                        <outlet property="messageButton" destination="mPK-nH-OFu" id="UVk-UW-gVO"/>
+                        <outlet property="messageButton" destination="mPK-nH-OFu" id="fdE-rp-9IC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a6w-lU-Yuj" userLabel="First Responder" sceneMemberID="firstResponder"/>

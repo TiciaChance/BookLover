@@ -10,11 +10,11 @@ import UIKit
 import AVFoundation
 import AudioToolbox
 
-protocol ReviewDelegate {
-    func getNYTbookReview(review: String)
-}
+//protocol ReviewDelegate {
+  //  func getNYTbookReview(review: String)
+//}
 
-class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     
     @IBOutlet weak var messageButton: UIButton!
@@ -31,12 +31,17 @@ class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        messageButton.isEnabled = false
+        //messageButton.isEnabled = false
         instantiateVidCapture()
+        
+        bookReviewData.NYTimesBookData(isbn: "9780812993547", completed: {_ in 
+            
+        })
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
+
         self.captureSession?.startRunning()
     }
     
@@ -63,7 +68,7 @@ class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
 
 // MARK:: Scanner functions
 
-extension ScannerController {
+extension ScannerViewController {
     func instantiateVidCapture() {
         let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         
@@ -113,7 +118,6 @@ extension ScannerController {
         if metadataObjects == nil || metadataObjects.count == 0 {
             codeFrameView?.frame = CGRect.zero
             
-            messageButton.isEnabled = true
             messageButton.setTitle("No code has been detected", for: .normal)
             return
         }
@@ -127,12 +131,13 @@ extension ScannerController {
             codeFrameView?.frame = barCodeObject!.bounds
             
             if metadataObj.stringValue != nil {
-                
+                messageButton.isEnabled = true
+
                 goodreadData.APICall(isbn: metadataObj.stringValue, completed:{
                     print("got code - now going to goodreads data")
                 })
                 
-                bookReviewData.NYTimesBookData(isbn: metadataObj.stringValue, completed: {
+                bookReviewData.NYTimesBookData(isbn: metadataObj.stringValue, completed: {_ in
                     
                 })
                 
