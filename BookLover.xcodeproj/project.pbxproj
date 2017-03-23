@@ -17,6 +17,8 @@
 		1145DE6E1DF28BB8001EBB5C /* BookLoverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1145DE6D1DF28BB8001EBB5C /* BookLoverUITests.swift */; };
 		1145DE7C1DF28CD7001EBB5C /* GoodreadsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1145DE7B1DF28CD7001EBB5C /* GoodreadsAPI.swift */; };
 		11505D8F1E0D72E60026EBE5 /* BestsellerGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11505D8E1E0D72E60026EBE5 /* BestsellerGetter.swift */; };
+		11799F141E8439E50053314A /* GRAdditionalDetailsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11799F131E8439E50053314A /* GRAdditionalDetailsAPI.swift */; };
+		11799F161E843B450053314A /* BookDetailsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11799F151E843B450053314A /* BookDetailsParser.swift */; };
 		1193994F1E32689500F48653 /* GoodreadsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1193994E1E32689500F48653 /* GoodreadsParser.swift */; };
 		119399511E3268CA00F48653 /* NYTimesParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119399501E3268CA00F48653 /* NYTimesParser.swift */; };
 		119E4FCB1DFC68920025DD70 /* slantedbooks.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 119E4FC61DFC68920025DD70 /* slantedbooks.jpg */; };
@@ -67,6 +69,8 @@
 		1145DE6F1DF28BB8001EBB5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1145DE7B1DF28CD7001EBB5C /* GoodreadsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoodreadsAPI.swift; path = ../GoodreadsAPI.swift; sourceTree = "<group>"; };
 		11505D8E1E0D72E60026EBE5 /* BestsellerGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestsellerGetter.swift; sourceTree = "<group>"; };
+		11799F131E8439E50053314A /* GRAdditionalDetailsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GRAdditionalDetailsAPI.swift; sourceTree = "<group>"; };
+		11799F151E843B450053314A /* BookDetailsParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailsParser.swift; sourceTree = "<group>"; };
 		1193994E1E32689500F48653 /* GoodreadsParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodreadsParser.swift; sourceTree = "<group>"; };
 		119399501E3268CA00F48653 /* NYTimesParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYTimesParser.swift; sourceTree = "<group>"; };
 		119E4FC61DFC68920025DD70 /* slantedbooks.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = slantedbooks.jpg; path = ../../../../Downloads/slantedbooks.jpg; sourceTree = "<group>"; };
@@ -192,6 +196,7 @@
 			children = (
 				1145DE7B1DF28CD7001EBB5C /* GoodreadsAPI.swift */,
 				11505D8E1E0D72E60026EBE5 /* BestsellerGetter.swift */,
+				11799F131E8439E50053314A /* GRAdditionalDetailsAPI.swift */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 			children = (
 				1193994E1E32689500F48653 /* GoodreadsParser.swift */,
 				119399501E3268CA00F48653 /* NYTimesParser.swift */,
+				11799F151E843B450053314A /* BookDetailsParser.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -445,10 +451,12 @@
 				11A0B22A1DFEDB9A00A13AAA /* ScannerViewController.swift in Sources */,
 				110C00F51E0EEC780017E1AE /* WebViewVC.swift in Sources */,
 				119E4FD51DFC6B0C0025DD70 /* BookLoverPageVC.swift in Sources */,
+				11799F141E8439E50053314A /* GRAdditionalDetailsAPI.swift in Sources */,
 				110C00F11E0ECFA00017E1AE /* DetailVC.swift in Sources */,
 				1193994F1E32689500F48653 /* GoodreadsParser.swift in Sources */,
 				1145DE4E1DF28BB8001EBB5C /* AppDelegate.swift in Sources */,
 				1145DE7C1DF28CD7001EBB5C /* GoodreadsAPI.swift in Sources */,
+				11799F161E843B450053314A /* BookDetailsParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -45,7 +45,7 @@ class GoodreadsParser {
 
 
 struct BookDetails {
-    var author : String
+    let author : String
     var title : String
     var imageURL : String?
     var averageRating : String

@@ -21,11 +21,11 @@ struct GoodreadsResponseData {
     public let results : [BookDetails]
 }
 
-class GoodreadsAPI: NSObject {
+class GoodreadsAPI {
     
     
     let key = "mqaiL9tKRtfMngub7an3A"
-    let secret = "21zrUDzirF0cRyIENUh2Fwl1cGlJN0RjOTX3eBkO4w"
+   // let secret = "21zrUDzirF0cRyIENUh2Fwl1cGlJN0RjOTX3eBkO4w"
     
     func APICall(isbn: String, completed: @escaping GoodreadsCompletion) {
         
@@ -40,25 +40,5 @@ class GoodreadsAPI: NSObject {
             
         }
     }
-    
-    
-//    func moreDetails(bookAuthor: String, bookTitle: String, completed: @escaping () -> ()) {
-//        
-//        Alamofire.request("https://www.goodreads.com/book/title.xml?author=\(bookAuthor)&key=\(key)&title=\(bookTitle)").responseString {(response) in
-//            
-//            
-//            guard let data = response.data else {return}
-//            
-//            let xml = SWXMLHash.parse(data)
-//            
-//            self.bookDescription = (xml["GoodreadsResponse"]["book"]["description"].element?.text)!
-//            
-//            self.numOfPages = (xml["GoodreadsResponse"]["book"]["num_pages"].element?.text)!
-//            self.publisher = (xml["GoodreadsResponse"]["book"]["publisher"].element?.text)!
-//            
-//        }
-//        
-//        
-//    }
   
 }
