@@ -34,10 +34,10 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         //messageButton.isEnabled = false
         instantiateVidCapture()
         
-        bookReviewData.NYTimesBookData(isbn: "9780812993547", completed: {_ in 
-            
-        })
-        
+       goodreadData.APICall(isbn: "9780812993547") { (response) in
+        print("in closure")
+    }
+    
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -45,20 +45,20 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         self.captureSession?.startRunning()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "detailSegue" {
-            let detailVC = segue.destination as! DetailVC
-            detailVC.author = goodreadData.author
-            detailVC.bookTitle = goodreadData.title
-            detailVC.bookImgURL = goodreadData.imageURL
-            detailVC.rating = goodreadData.averageRating
-            detailVC.bookDescription = goodreadData.bookDescription
-            detailVC.bookPublisher = goodreadData.publisher
-            detailVC.pages = goodreadData.numOfPages
-            
-            detailVC.reviewURL = bookReviewData.reviewURL
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "detailSegue" {
+//            let detailVC = segue.destination as! DetailVC
+//            detailVC.author = goodreadData.author
+//            detailVC.bookTitle = goodreadData.title
+//            detailVC.bookImgURL = goodreadData.imageURL
+//            detailVC.rating = goodreadData.averageRating
+//            detailVC.bookDescription = goodreadData.bookDescription
+//            detailVC.bookPublisher = goodreadData.publisher
+//            detailVC.pages = goodreadData.numOfPages
+//            
+//            //detailVC.reviewURL = bookReviewData.reviewURL
+//        }
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -133,7 +133,7 @@ extension ScannerViewController {
             if metadataObj.stringValue != nil {
                 messageButton.isEnabled = true
 
-                goodreadData.APICall(isbn: metadataObj.stringValue, completed:{
+                goodreadData.APICall(isbn: metadataObj.stringValue, completed:{_ in 
                     print("got code - now going to goodreads data")
                 })
                 

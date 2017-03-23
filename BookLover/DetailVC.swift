@@ -20,40 +20,47 @@ class DetailVC: UIViewController {
     @IBOutlet weak var NYTReviewButton: UIButton!
     @IBOutlet weak var publisherLabel: UILabel!
 
+    let bookDetails = [BookDetails]()
+    let nytimesClient = [BookReview]()
+    
     var overlayView = UIView()
     var descriptionLabel = UILabel()
     var doneButton = UIButton()
     
-    var bookTitle = String()
-    var author = String()
-    var bookImgURL = String()
-    var rating = String()
-    var reviewURL = String()
-    var bookDescription = String()
-    var bookPublisher = String()
-    var pages = String()
+//    var bookTitle = String()
+//    var author = String()
+//    var bookImgURL = String()
+//    var rating = String()
+//    var reviewURL = String()
+//    var bookDescription = String()
+//    var bookPublisher = String()
+//    var pages = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        titleLbl.text = bookTitle
-        authorLbl.text = author
-        guard let url = URL(string: bookImgURL) else {
-            bookImage.image = #imageLiteral(resourceName: "book.jpg")
-            return
-        }
-        let data = try? Data(contentsOf: url)
-        bookImage.image = UIImage(data: data!)
-        ratingLbl.text = "Rating: \(rating)"
-        numOfPagesLabel.text = "Number of pages: \(pages)"
-        publisherLabel.text = "Publisher: \(bookPublisher)"
+//        titleLbl.text = bookTitle
+//        authorLbl.text = author
+//        guard let url = URL(string: bookImgURL) else {
+//            bookImage.image = #imageLiteral(resourceName: "book.jpg")
+//            return
+//        }
+//        let data = try? Data(contentsOf: url)
+//        bookImage.image = UIImage(data: data!)
+//        ratingLbl.text = "Rating: \(rating)"
+//        numOfPagesLabel.text = "Number of pages: \(pages)"
+//        publisherLabel.text = "Publisher: \(bookPublisher)"
+    }
     
+    func updateLabels() {
+        
+        
     }
 
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let webVC = segue.destination as! WebViewVC
-         webVC.reviewURL = reviewURL
+      //  let webVC = segue.destination as! WebViewVC
+        // webVC.reviewURL = reviewURL
     }
     
     @IBAction func descriptionButtonTapped(_ sender: Any) {
@@ -75,8 +82,10 @@ class DetailVC: UIViewController {
         descriptionLabel.numberOfLines = .max
         descriptionLabel.textColor = UIColor.white
         descriptionLabel.textAlignment = .center
-        let newBookDescription = bookDescription.replacingOccurrences(of: "<br />", with: " ")
-        descriptionLabel.text = newBookDescription
+      
+        
+        //  let newBookDescription = bookDescription.replacingOccurrences(of: "<br />", with: " ")
+       // descriptionLabel.text = newBookDescription
         
         //button
         doneButton = UIButton(frame: CGRect(origin: CGPoint(x: self.view.frame.width/2 + 75, y: self.view.frame.height - 60), size: CGSize(width: 100, height: 50)))
